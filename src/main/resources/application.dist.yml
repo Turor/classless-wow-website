@@ -1,0 +1,63 @@
+spring:
+  application:
+    name: classless-wow-web-server
+  
+  docker:
+    compose:
+      enabled: false
+  
+  # JPA/Hibernate Configuration
+  datasource:
+    url: jdbc:mysql://localhost:3307/acore_auth
+    username: <database_username>
+    password: <database_password>
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  
+  jpa:
+    hibernate:
+      ddl-auto: none
+    show-sql: false
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQLDialect
+        format_sql: true
+  
+  # Redis config
+  data:
+    redis:
+      host: localhost
+      port: 6379
+      password:
+      timeout: 60000
+
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: <email>
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+          ssl:
+            trust: smtp.gmail.com
+
+  security:
+    oauth2:
+      client:
+        registration:
+          gmail:
+            client-id: <google_api_mail_client_id>
+            client-secret: YOUR_CLIENT_SECRET
+            authorization-grant-type: refresh_token
+            scope: https://mail.google.com/
+        provider:
+          gmail:
+            token-uri: https://oauth2.googleapis.com/token
+
+# Recovery token settings
+recovery:
+  token:
+    expiration:
+      minutes: 30

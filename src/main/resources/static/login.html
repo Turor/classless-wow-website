@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Classless WoW</title>
+    <script src="https://unpkg.com/htmx.org"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+        }
+        
+        .login-container {
+            background: #fff;
+            border: 2px solid #000;
+            border-radius: 8px;
+            padding: 40px;
+            width: 100%;
+            max-width: 400px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #333;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #333;
+        }
+        
+        input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-size: 14px;
+        }
+        
+        input:focus {
+            outline: none;
+            border-color: #0078D7;
+        }
+        
+        button {
+            width: 100%;
+            padding: 12px;
+            background: #0078D7;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+        }
+        
+        button:hover {
+            background: #005BB5;
+        }
+        
+        #feedback {
+            margin-top: 15px;
+            padding: 10px;
+            border-radius: 4px;
+            text-align: center;
+            font-weight: bold;
+        }
+        
+        .error-message {
+            background: #ffe6e6;
+            color: #c00;
+            border: 1px solid #c00;
+        }
+        
+        .success-message {
+            background: #e6ffe6;
+            color: #080;
+            border: 1px solid #080;
+        }
+        
+        .info-message {
+            background: #e6f3ff;
+            color: #0066cc;
+            border: 1px solid #0066cc;
+        }
+    </style>
+</head>
+<body>
+
+<div class="login-container">
+    <h1>Classless Wow Login (Checking that I probably know you)</h1>
+    
+    <!-- Feedback area for messages -->
+    <div id="feedback">
+    </div>
+    
+    <!-- Login form with HTMX -->
+    <form hx-post="/login" 
+          hx-target="#feedback" 
+          hx-swap="innerHTML"
+          hx-indicator="#loading">
+        
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" 
+                   id="password" 
+                   name="password" 
+                   placeholder="Enter your password" 
+                   required>
+        </div>
+        
+        <button type="submit">
+            <span id="loading" class="htmx-indicator">⏳ Signing in...</span>
+            <span class="htmx-request">Sign In</span>
+        </button>
+    </form>
+</div>
+
+</body>
+</html>

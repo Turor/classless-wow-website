@@ -1,0 +1,53 @@
+<div>
+    <h2>Account Registration</h2>
+    <form hx-post="/register" hx-target="#feedback-row" hx-swap="innerHTML">
+        <table>
+            <tr>
+                <td>
+                    <label for="username">Username</label>
+                </td>
+                <td>
+                    <input id="username" type="text" name="username" placeholder="Username" required>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <label for="password">Password</label>
+                </td>
+                <td>
+                    <input id="password" type="password" name="password" placeholder="Password" required>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <label for="confirmPassword">Password Confirmation</label>
+                </td>
+                <td>
+                    <input id="confirmPassword" type="password" name="confirmPassword" placeholder="Confirm Password" required>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <label for="email">Email <span style="font-weight: normal; color: #666;">(optional)</span></label>
+                </td>
+                <td>
+                    <input id="email" type="email" name="email" placeholder="Email">
+                </td>
+            </tr>
+
+            <tr>
+                <td colspan="2">
+                    <button type="submit">Submit</button>
+                </td>
+            </tr>
+            <tr id="feedback-row">
+                <td colspan="2" style="text-align: center; padding: 10px;">
+                    <!-- Success/error messages will appear here -->
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>

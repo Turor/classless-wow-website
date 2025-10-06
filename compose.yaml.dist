@@ -1,0 +1,38 @@
+services:
+  classless-web-server:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    environment:
+      # Connect to host machine's MySQL
+      SPRING_DATASOURCE_URL: jdbc:mysql://host.docker.internal:3307/acore_auth
+      SPRING_DATASOURCE_USERNAME: ${DB_USERNAME}
+      SPRING_DATASOURCE_PASSWORD: ${DB_PASSWORD}
+      SPRING_DATA_REDIS_HOST: redis
+      SPRING_DATA_REDIS_PORT: 6379
+    depends_on:
+      redis:
+        condition: service_healthy
+    extra_hosts:
+      - "host.docker.internal:host-gateway"  # Linux users need this
+    networks:
+      - app-network
+  redis:
+    image: 'redis:latest'
+    ports:
+      - "6379:6379"
+    healthcheck:
+      test: [ "CMD", "redis-cli", "ping" ]
+      interval: 5s
+      timeout: 3s
+      retries: 5
+    volumes:
+      - redis-data:/data
+volumes:
+  redis-data:
+
+networks:
+  app-network:
+    driver: bridge

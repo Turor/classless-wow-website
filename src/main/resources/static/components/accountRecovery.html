@@ -1,0 +1,68 @@
+<div>
+    <span>Please enter the email you used to register your account to generate a recovery token, and ask Matt for the token</span>
+    <form hx-post="/recovery/token/generate" hx-target="#token-generation-feedback-row" hx-swap="innerHTML">
+        <table>
+            <tr>
+                <td>
+                    <label for="email">Email</label>
+                </td>
+                <td>
+                    <input id="email" type="email" name="email" placeholder="Email" required>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <button type="submit">Generate Token</button>
+                </td>
+            </tr>
+            <tr id="token-generation-feedback-row">
+                <td colspan="2" style="text-align: center; padding: 10px;">
+                    <!-- Success/error messages will appear here -->
+                </td>
+            </tr>
+        </table>
+    </form>
+
+    <form hx-post="/recovery" hx-target="#reset-feedback-row" hx-swap="innerHTML">
+        <table>
+            <tr>
+                <td>
+                    <label for="token">Recovery Token</label>
+                </td>
+                <td>
+                    <input id="token" name="token" placeholder="Paste your token from Matt here"
+                           required>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <label for="newPassword">New Password</label>
+                </td>
+                <td>
+                    <input id="newPassword" type="password" name="newPassword" placeholder="New Password" required>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="confirmPassword">Password Confirmation</label>
+                </td>
+                <td>
+                    <input id="confirmPassword" type="password" name="confirmPassword" placeholder="Confirm Password"
+                           required>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <button type="submit">Reset Password</button>
+                </td>
+            </tr>
+            <tr id="reset-feedback-row">
+                <td colspan="2" style="text-align: center; padding: 10px;">
+                    <!-- Success/error messages will appear here -->
+                </td>
+            </tr>
+        </table>
+    </form>
+
+</div>
