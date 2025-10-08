@@ -10,11 +10,16 @@ public class ComponentController {
 
     @GetMapping("/registration")
     public String getRegistrationComponent() {
-        return "components/registration";
+        return "forward:components/registration.html";
     }
 
     @GetMapping("/account-recovery")
     public String getAccountRecoveryComponent() {
-        return "components/accountRecovery";
+        return "forward:components/accountRecovery.html";
+    }
+
+    @GetMapping("/main")
+    public String getMainComponent() {
+        return "forward:components/main.html";
     }
 }

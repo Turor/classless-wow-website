@@ -1,0 +1,35 @@
+<div class="container">
+    <!-- Tab Navigation -->
+    <h1 class="title">Turoran's Classless Wow</h1>
+    <div class="tabs">
+        <button class="tab active"
+                hx-get="/components/registration.html"
+                hx-target="#content-area"
+                hx-swap="innerHTML"
+                onclick="setActiveTab(this)">
+            Account Registration
+        </button>
+        <button class="tab"
+                hx-get="/components/accountRecovery.html"
+                hx-target="#content-area"
+                hx-swap="innerHTML"
+                onclick="setActiveTab(this)">
+            Account Recovery
+        </button>
+        <a class="tab"
+           href="/files/downloadlauncher"
+           download>
+            <img src="/icons/launchericon.png" alt="Launcher" class="icon"/>
+            <span>Download Launcher</span>
+        </a>
+    </div>
+
+    <!-- Content Area - Load registration component on page load -->
+    <div id="content-area"
+         class="content"
+         hx-get="/components/registration.html"
+         hx-trigger="load"
+         hx-swap="innerHTML">
+        <!-- Registration component will load here -->
+    </div>
+</div>

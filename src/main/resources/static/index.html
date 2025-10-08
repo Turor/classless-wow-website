@@ -1,154 +1,158 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Turoran's Classless Wow</title>
-  <script src="https://unpkg.com/htmx.org"></script>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #f4f4f9;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
-      margin: 0;
-      padding: 20px;
-    }
-    
-    .container {
-      background: #fff;
-      border: 2px solid #000;
-      border-radius: 8px;
-      width: 100%;
-      max-width: 600px;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    }
-    
-    /* Tab Navigation */
-    .tabs {
-      display: flex;
-      border-bottom: 2px solid #000;
-    }
-    
-    .tab {
-      flex: 1;
-      padding: 15px 20px;
-      border: none;
-      border-right: 2px solid #000;
-      background: #fff;
-      cursor: pointer;
-      font-size: 16px;
-      transition: background-color 0.3s;
-    }
-    
-    .tab:last-child {
-      border-right: none;
-    }
-    
-    .tab:hover {
-      background: #f0f0f0;
-    }
-    
-    .tab.active {
-      background: #0078D7;
-      color: #fff;
-      font-weight: bold;
-    }
-    
-    /* Content Area */
-    .content {
-      padding: 30px;
-      min-height: 300px;
-      border: 2px solid #000;
-      margin: 10px;
-      border-radius: 4px;
-    }
-    
-    /* Form Styles */
-    input, button {
-      padding: 10px;
-      margin: 10px 0;
-      width: 100%;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-      box-sizing: border-box;
-    }
-    
-    button[type="submit"] {
-      background: #0078D7;
-      color: #fff;
-      border: none;
-      cursor: pointer;
-      font-size: 16px;
-    }
-    
-    button[type="submit"]:hover {
-      background: #005BB5;
-    }
-    
-    label {
-      display: block;
-      margin-top: 10px;
-      font-weight: bold;
-    }
-    
-    table {
-      width: 100%;
-    }
-    
-    table td {
-      padding: 5px;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Classless WoW</title>
+    <script src="https://unpkg.com/htmx.org"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .title {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #333;
+        }
+
+        .container {
+            background: #fff;
+            border: 2px solid #000;
+            border-radius: 8px;
+            width: 100%;
+            max-width: 600px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Tab Navigation */
+        .tabs {
+            display: flex;
+            border-bottom: 2px solid #000;
+        }
+
+        .tab {
+            flex: 1;
+            padding: 15px 20px;
+            border: none;
+            border-right: 2px solid #000;
+            background: #fff;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .tab:last-child {
+            border-right: none;
+        }
+
+        .tab:hover {
+            background: #f0f0f0;
+        }
+
+        .tab.active {
+            background: #0078D7;
+            color: #fff;
+            font-weight: bold;
+        }
+
+        /* icon inside tab */
+        .tab img.icon {
+            width: 20px;
+            height: 20px;
+            margin-right: 8px;
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        /* Content Area */
+        .content {
+            padding: 30px;
+            min-height: 300px;
+            border: 2px solid #000;
+            margin: 10px;
+            border-radius: 4px;
+        }
+
+        /* Form Styles */
+        input, button {
+            padding: 10px;
+            margin: 10px 0;
+            width: 100%;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        button[type="submit"] {
+            background: #0078D7;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button[type="submit"]:hover {
+            background: #005BB5;
+        }
+
+        label {
+            display: block;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        table {
+            width: 100%;
+        }
+
+        table td {
+            padding: 5px;
+        }
+    </style>
 </head>
 <body>
 
-<div class="container">
-  <!-- Tab Navigation -->
-  <div class="tabs">
-    <button class="tab active" 
-            hx-get="/components/registration.html" 
-            hx-target="#content-area" 
-            hx-swap="innerHTML"
-            onclick="setActiveTab(this)">
-      Account Registration
-    </button>
-    <button class="tab" 
-            hx-get="/components/accountRecovery.html" 
-            hx-target="#content-area" 
-            hx-swap="innerHTML"
-            onclick="setActiveTab(this)">
-      Account Recovery
-    </button>
-    <button class="tab" 
-            hx-get="/components/downloadLauncher.html"
-            hx-target="#content-area" 
-            hx-swap="innerHTML"
-            onclick="setActiveTab(this)">
-      Download Launcher
-    </button>
-  </div>
-  
-  <!-- Content Area - Load registration component on page load -->
-  <div id="content-area" 
-       class="content"
-       hx-get="/components/registration.html"
-       hx-trigger="load"
-       hx-swap="innerHTML">
-    <!-- Registration component will load here -->
-  </div>
+<div class="container" id="content-area">
+    <h1>Classless Wow Login</h1>
+    <!-- Login form with HTMX -->
+    <form hx-post="/login" 
+          hx-target="#content-area"
+          hx-swap="outerHTML">
+        
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" 
+                   id="password" 
+                   name="password" 
+                   placeholder="Enter your password" 
+                   required>
+        </div>
+        
+        <button type="submit">
+            <span class="htmx-request">Sign In</span>
+        </button>
+    </form>
 </div>
 
 <script>
-  // Handle active tab styling
-  function setActiveTab(clickedTab) {
-    document.querySelectorAll('.tab').forEach(tab => {
-      tab.classList.remove('active');
-    });
-    clickedTab.classList.add('active');
-  }
+    // Handle active tab styling
+    function setActiveTab(clickedTab) {
+        document.querySelectorAll('.tab').forEach(tab => {
+            tab.classList.remove('active');
+        });
+        clickedTab.classList.add('active');
+    }
 </script>
 
 </body>

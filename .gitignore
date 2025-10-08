@@ -6,6 +6,10 @@ build/
 !**/src/test/**/build/
 compose.yaml
 
+ClasslessLauncher.zip
+launchericon.png
+local-keystore.p12
+
 application.yml
 
 ### STS ###
