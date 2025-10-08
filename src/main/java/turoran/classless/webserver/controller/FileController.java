@@ -45,7 +45,7 @@ public class FileController {
         try {
             launcherService.synchronizeClient();
         } catch (Exception e) {
-            log.error("Failed to synchronize launcher.zip: {}", e.getMessage());
+            log.error("Failed to synchronize ClasslessLauncher.zip: {}", e.getMessage());
         }
 
         StreamingResponseBody responseBody = outputStream -> {
@@ -58,6 +58,13 @@ public class FileController {
                 .contentType(MediaType.APPLICATION_OCTET_STREAM)
                 .contentLength(Files.size(launcherService.localZipPath))
                 .body(responseBody);
+    }
+
+    @GetMapping(value="/download")
+    public ResponseEntity<Void> getLauncher() {
+        return ResponseEntity.ok()
+                .header("HX-Redirect", "/files/downloadlauncher")
+                .build();
     }
 }
 

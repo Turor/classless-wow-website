@@ -6,10 +6,12 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.HandlerInterceptor;
 
+import java.util.Set;
+
 @Component
 @Slf4j
 public class PasswordGateInterceptor implements HandlerInterceptor {
-    private static final String SECRET = "letmein";
+    private final Set<String> unblockedList = Set.of("/index.html", "/", "/login", "/error","/components/login.html", "/stylesheet.css");
 
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler)
@@ -18,12 +20,14 @@ public class PasswordGateInterceptor implements HandlerInterceptor {
         // Allow access to login page and static resources
         String uri = request.getRequestURI();
         log.info("Request Received for  URI: {} {}", uri, request.getSession().getAttribute("authenticated"));
-        if (uri.equals("/index.html") || uri.equals("/") || uri.equals("/login") || uri.equals("/error")) {
+        if (unblockedList.contains(uri)) {
+            log.info("Allow access to login page and static resources");
             return true;
         }
 
         // Already logged in
         if (Boolean.TRUE.equals(request.getSession().getAttribute("authenticated"))) {
+            log.info("Allowing request because the user is logged in");
             return true;
         }
 

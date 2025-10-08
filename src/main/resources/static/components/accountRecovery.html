@@ -66,3 +66,21 @@
     </form>
 
 </div>
+
+<button id="registration-tab"
+        class="tab"
+        hx-get="/components/registration.html"
+        hx-target="#content-area"
+        hx-swap="innerHTML"
+        hx-swap-oob="outerHTML">
+    Account Registration
+</button>
+
+<button id="recovery-tab"
+        class="tab active"
+        hx-get="/components/accountRecovery.html"
+        hx-target="#content-area"
+        hx-swap="innerHTML"
+        hx-swap-oob="outerHTML">
+    Account Recovery
+</button>

@@ -47,7 +47,8 @@ public class ClientServiceImplementation implements ClientService {
             
             // Save to database
             accountRepository.save(account);
-            
+
+            log.info("Account registered successfully");
             return Optional.empty();
             
         } catch (Exception e) {
