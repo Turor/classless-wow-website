@@ -29,6 +29,7 @@ spring:
   datasource:
     mysql:
       url: jdbc:mysql://localhost:3307/acore_auth
+      # You must create these users accepting this server's IP address with the roles of 'SELECT', 'INSERT', 'UPDATE' on the database
       username: web_server
       password: password
       driver-class-name: com.mysql.cj.jdbc.Driver
@@ -42,13 +43,20 @@ spring:
     sqlite:
       database-platform: org.hibernate.community.dialect.SQLiteDialect
 
+# You must configure SSL if you're not behind some other SSL connection leg
+# like a connection to HAProxy (or other load balancer)
 server:
+  port: 8080
   ssl:
-    enabled: true
-    key-store: classpath:local-keystore.p12
-    key-store-type: PKCS12
-    key-store-password: changeit
-  port: 8443
+    enabled: false
+
+#server:
+#  ssl:
+#    enabled: true
+#    key-store: classpath:local-keystore.p12
+#    key-store-type: PKCS12
+#    key-store-password: changeit
+#  port: 8443
 
 logging:
   level:
