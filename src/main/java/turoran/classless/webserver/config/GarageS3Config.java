@@ -15,7 +15,7 @@ import java.net.URI;
 @Configuration
 public class GarageS3Config {
 
-    @Value("${garage.s3.endpoint:http://localhost:3900}")
+    @Value("${garage.s3.endpoint.remote:http://localhost:3900}")
     private String endpoint;
 
     @Bean

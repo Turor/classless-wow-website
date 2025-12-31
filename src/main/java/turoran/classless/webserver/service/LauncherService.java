@@ -40,17 +40,20 @@ public class LauncherService {
         }
     }
 
-    public synchronized void synchronizeClient() {
+    public synchronized void synchronizeClient() throws IOException {
         HeadObjectResponse head = s3Client.headObject(b -> b
                 .bucket("wow")
                 .key("ClasslessLauncher.zip")
         );
+        System.out.println(head);
+        System.out.println(head.eTag() + " " + cachedEtag);
 
         String etag = head.eTag();
         boolean needsDownload = !Files.exists(localZipPath) || !etag.equals(cachedEtag);
 
         if (needsDownload) {
             System.out.println("🔄 Updating launcher.zip from S3...");
+            Files.deleteIfExists(localZipPath);
             s3Client.getObject(b -> b.bucket("wow").key("ClasslessLauncher.zip"), localZipPath);
             cachedEtag = etag;
             System.out.println("✅ launcher.zip updated and cached locally.");

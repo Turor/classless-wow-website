@@ -1,5 +1,22 @@
 password: letmein
 
+garage.s3:
+  allowlist: # Comma separated list of allowed buckets and keys for S3 access.
+    bucket:
+      - bucket1
+      - bucket2
+    keys:
+      - list
+      - of
+      - keys
+    prefixes:
+      - key
+      - prefixes
+      - allowed
+  endpoint:
+    local: http://localhost:3900
+    remote: https://garage.domain.com # Configure based on your domain name. I use HAProxy for https, who knows if this is optimal
+
 spring:
   application:
     name: classless-wow-web-server
