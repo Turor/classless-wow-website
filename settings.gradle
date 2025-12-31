@@ -1,8 +1,1 @@
 rootProject.name = 'web-server'
-toolchainManagement {
-    jvm {
-        javaRepositories {
-            repository('adoptium')
-        }
-    }
-}
