@@ -3,6 +3,7 @@ package turoran.classless.webserver.config;
 import jakarta.persistence.EntityManagerFactory;
 import javax.sql.DataSource;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceProperties;
 import org.springframework.boot.orm.jpa.EntityManagerFactoryBuilder;
@@ -24,6 +25,7 @@ import java.util.Map;
         entityManagerFactoryRef = "mysqlEntityManagerFactory",
         transactionManagerRef = "mysqlTransactionManager"
 )
+@Slf4j
 public class MySqlDataSourceConfig {
 
     @Primary
@@ -34,6 +36,7 @@ public class MySqlDataSourceConfig {
         p.setUsername(env.getProperty("spring.datasource.mysql.username"));
         p.setPassword(env.getProperty("spring.datasource.mysql.password"));
         p.setDriverClassName(env.getProperty("spring.datasource.mysql.driver-class-name"));
+        log.error("MySQL DataSource Properties: {}", p.determineUrl());
         return p;
     }
 
