@@ -1,6 +1,8 @@
 package turoran.classless.webserver.config;
 
+import jakarta.annotation.PostConstruct;
 import lombok.RequiredArgsConstructor;
+import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
@@ -18,5 +20,13 @@ public class WebConfig implements WebMvcConfigurer {
     public void addInterceptors(InterceptorRegistry registry) {
         registry.addInterceptor(gate);
         registry.addInterceptor(logging);
+    }
+
+    @PostConstruct
+    void dumpDatasourceInfo(ApplicationContext ctx) {
+        System.out.println("DataSource beans:");
+        for (String name : ctx.getBeanNamesForType(javax.sql.DataSource.class)) {
+            System.out.println(" - " + name);
+        }
     }
 }
