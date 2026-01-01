@@ -52,7 +52,6 @@ public class MySqlDataSourceConfig {
 
         Map<String, Object> props = new HashMap<>();
         props.put("hibernate.hbm2ddl.auto", env.getProperty("spring.jpa.mysql.hibernate.ddl-auto", "none"));
-        props.put("hibernate.dialect", env.getProperty("spring.jpa.mysql.properties.hibernate.dialect", "org.hibernate.dialect.MySQL8Dialect"));
 
         return builder
                 .dataSource(ds)
