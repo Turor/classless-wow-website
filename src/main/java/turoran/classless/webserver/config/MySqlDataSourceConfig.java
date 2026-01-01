@@ -31,6 +31,10 @@ public class MySqlDataSourceConfig {
     @Primary
     @Bean(name = "mysqlDataSourceProperties")
     public DataSourceProperties mysqlDataSourceProperties(Environment env) {
+        log.error("Provided URL, Username, Driver: {}, {}, {}",
+                env.getProperty("spring.datasource.mysql.url"),
+                env.getProperty("spring.datasource.mysql.username"),
+                env.getProperty("spring.datasource.mysql.driver-class-name"));
         DataSourceProperties p = new DataSourceProperties();
         p.setUrl(env.getProperty("spring.datasource.mysql.url"));
         p.setUsername(env.getProperty("spring.datasource.mysql.username"));
