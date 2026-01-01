@@ -21,12 +21,4 @@ public class WebConfig implements WebMvcConfigurer {
         registry.addInterceptor(gate);
         registry.addInterceptor(logging);
     }
-
-    @PostConstruct
-    void dumpDatasourceInfo(ApplicationContext ctx) {
-        System.out.println("DataSource beans:");
-        for (String name : ctx.getBeanNamesForType(javax.sql.DataSource.class)) {
-            System.out.println(" - " + name);
-        }
-    }
 }
