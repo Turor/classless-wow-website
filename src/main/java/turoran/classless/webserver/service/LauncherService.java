@@ -21,7 +21,7 @@ public class LauncherService {
     private String cachedEtag = null;
 
     public LauncherService(S3Client s3Client,
-                           @Value("${launcher.cacheDir:./cache}") String cacheDir,
+                           @Value("${launcherservice.cacheDir:./cache}") String cacheDir,
                            @Value("${launcherservice.launcherName:ClasslessLauncher.zip}") String launcherName) {
         this.s3Client = s3Client;
         zipPath = Paths.get(cacheDir, "/",launcherName);
