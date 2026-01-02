@@ -15,16 +15,22 @@ garage.s3:
       - allowed
   endpoint:
     local: http://localhost:3900
-    remote: https://garage.domain.com # Configure based on your domain name. I use HAProxy for https, who knows if this is optimal
+    # Garage doesn't support TLS termination at the node level yet, so we have to use a proxy like HAProxy to handle TLS termination
+    remote: https://garage.domain.com
+
+launcherservice:
+  cacheDir: src/main/resources/static/cache # must match static-locations in spring.web.resources.static-locations
+  launcherName: ClasslessLauncher.zip
 
 spring:
   application:
     name: classless-wow-web-server
+  web:
+    resources:
+      static-locations:
+        - classpath:/static/
+        - file:src/main/resources/static/cache # must match cacheDir above
 
-  docker:
-    compose:
-      enabled: false
-  
   # JPA/Hibernate Configuration
   datasource:
     mysql:
@@ -43,8 +49,7 @@ spring:
     sqlite:
       database-platform: org.hibernate.community.dialect.SQLiteDialect
 
-# You must configure SSL if you're not behind some other SSL connection leg
-# like a connection to HAProxy (or other load balancer)
+# If you're not behind some other SSL connection leg like a connection to HAProxy (or other load balancer), you must configure SSL here
 server:
   port: 8080
   ssl:

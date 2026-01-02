@@ -49,14 +49,14 @@ public class FileController {
         }
 
         StreamingResponseBody responseBody = outputStream -> {
-            try (InputStream in = Files.newInputStream(launcherService.localZipPath)) {
+            try (InputStream in = Files.newInputStream(launcherService.zipPath)) {
                 in.transferTo(outputStream);
             }
         };
         return ResponseEntity.ok()
                 .header("Content-Disposition", "attachment; filename=\"ClasslessLauncher.zip\"")
                 .contentType(MediaType.APPLICATION_OCTET_STREAM)
-                .contentLength(Files.size(launcherService.localZipPath))
+                .contentLength(Files.size(launcherService.zipPath))
                 .body(responseBody);
     }
 

@@ -2,6 +2,7 @@ package turoran.classless.webserver.service;
 
 import jakarta.annotation.PostConstruct;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import software.amazon.awssdk.services.s3.S3Client;
 import software.amazon.awssdk.services.s3.model.HeadObjectResponse;
@@ -15,15 +16,18 @@ import java.nio.file.Paths;
 @Slf4j
 public class LauncherService {
     private final S3Client s3Client;
-    public final Path localZipPath = Paths.get("src/main/resources/static/cache/ClasslessLauncher.zip");
+    public final Path zipPath;
 
     private String cachedEtag = null;
 
-    public LauncherService(S3Client s3Client) {
+    public LauncherService(S3Client s3Client,
+                           @Value("${launcher.cacheDir:./cache}") String cacheDir,
+                           @Value("${launcherservice.launcherName:ClasslessLauncher.zip}") String launcherName) {
         this.s3Client = s3Client;
+        zipPath = Paths.get(cacheDir, "/",launcherName);
         try {
-            log.info("Creating cache directory at {}", localZipPath.getParent());
-            Files.createDirectories(localZipPath.getParent());
+            log.info("Creating cache directory at {}",cacheDir);
+            Files.createDirectories(Path.of(cacheDir));
         } catch (IOException e) {
             log.error("Failed to create cache directory", e);
             throw new RuntimeException("Failed to create cache directory", e);
@@ -49,12 +53,12 @@ public class LauncherService {
         System.out.println(head.eTag() + " " + cachedEtag);
 
         String etag = head.eTag();
-        boolean needsDownload = !Files.exists(localZipPath) || !etag.equals(cachedEtag);
+        boolean needsDownload = !Files.exists(zipPath) || !etag.equals(cachedEtag);
 
         if (needsDownload) {
             System.out.println("🔄 Updating launcher.zip from S3...");
-            Files.deleteIfExists(localZipPath);
-            s3Client.getObject(b -> b.bucket("wow").key("ClasslessLauncher.zip"), localZipPath);
+            Files.deleteIfExists(zipPath);
+            s3Client.getObject(b -> b.bucket("wow").key("ClasslessLauncher.zip"), zipPath);
             cachedEtag = etag;
             System.out.println("✅ launcher.zip updated and cached locally.");
         } else {
