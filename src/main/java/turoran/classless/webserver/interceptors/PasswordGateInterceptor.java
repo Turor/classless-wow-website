@@ -12,7 +12,7 @@ import java.util.Set;
 @Slf4j
 public class PasswordGateInterceptor implements HandlerInterceptor {
     private final Set<String> unblockedList = Set.of("/index.html", "/", "/login", "/error","/components/login.html", "/stylesheet.css",
-            "/files/presign/header", "/files/presign/download");
+            "/files/presign/header", "/files/presign/download","/health");
 
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler)
