@@ -25,6 +25,7 @@ public class LauncherService {
                            @Value("${launcherservice.launcherName:ClasslessLauncher.zip}") String launcherName) {
         this.s3Client = s3Client;
         zipPath = Paths.get(cacheDir, "/",launcherName);
+        log.info("LauncherService initialized with zipPath: {}", zipPath);
     }
 
     @PostConstruct
