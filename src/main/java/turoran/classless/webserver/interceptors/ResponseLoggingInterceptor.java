@@ -19,10 +19,11 @@ public class ResponseLoggingInterceptor implements HandlerInterceptor {
             ModelAndView modelAndView) {
 
         int status = response.getStatus();
+        String requestParameters = request.getQueryString();
         String uri = request.getRequestURI();
         String view = (modelAndView != null) ? modelAndView.getViewName() : "N/A";
 
-        log.info("POST-HANDLE → [{}] {} → View: {}", uri, status, view);
+        log.info("POST-HANDLE → [{}] {} → View: {}", uri+requestParameters, status, view);
     }
 
     @Override
