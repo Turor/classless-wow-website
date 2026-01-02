@@ -25,13 +25,6 @@ public class LauncherService {
                            @Value("${launcherservice.launcherName:ClasslessLauncher.zip}") String launcherName) {
         this.s3Client = s3Client;
         zipPath = Paths.get(cacheDir, "/",launcherName);
-        try {
-            log.info("Creating cache directory at {}",cacheDir);
-            Files.createDirectories(Path.of(cacheDir));
-        } catch (IOException e) {
-            log.error("Failed to create cache directory", e);
-            throw new RuntimeException("Failed to create cache directory", e);
-        }
     }
 
     @PostConstruct
