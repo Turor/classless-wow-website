@@ -1,4 +1,4 @@
-package turoran.classless.webserver.repository.sqlite.entities;
+package turoran.classless.webserver.repository.mysql.entities;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -13,7 +13,7 @@ import java.time.Instant;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Profile("dev")
+@Profile("prod")
 public class RecoveryToken {
 
     @Id

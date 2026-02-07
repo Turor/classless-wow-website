@@ -23,6 +23,8 @@ launcherservice:
   launcherName: ClasslessLauncher.zip
 
 spring:
+  profiles:
+    active: "prod" # dev or prod. Prod is mysql db, dev is
   application:
     name: classless-wow-web-server
   web:

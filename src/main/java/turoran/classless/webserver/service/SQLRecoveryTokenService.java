@@ -5,8 +5,8 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
-import turoran.classless.webserver.repository.sqlite.entities.RecoveryToken;
-import turoran.classless.webserver.repository.sqlite.RecoveryTokenRepository;
+import turoran.classless.webserver.repository.mysql.entities.RecoveryToken;
+import turoran.classless.webserver.repository.mysql.RecoveryTokenRepository;
 
 import java.security.SecureRandom;
 import java.util.Base64;
@@ -15,10 +15,10 @@ import java.util.Optional;
 @Service
 @RequiredArgsConstructor
 @Slf4j
-@Profile("dev")
-public class SqliteRecoveryTokenService implements RecoveryTokenService {
+@Profile("prod")
+public class SQLRecoveryTokenService implements RecoveryTokenService {
 
-    private final  RecoveryTokenRepository recoveryTokenRepository;
+    private final RecoveryTokenRepository recoveryTokenRepository;
     private final SecureRandom secureRandom = new SecureRandom();
 
     @Override
