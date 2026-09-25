@@ -16,7 +16,19 @@
                 hx-swap="innerHTML">
             Account Recovery
         </button>
-        <button class="tab" hx-get="/files/download" hx-swap="none">Download Launcher<img src="/icons/launchericon.png" alt="Launcher" class="icon"/></button>
+        <button class="tab" hx-get="/files/download/windows" hx-swap="none">
+            <img src="/icons/windows-launcher.png" alt="Windows" class="icon"/>Windows
+        </button>
+        <button class="tab" hx-get="/files/download/linux" hx-swap="none">
+            <img src="/icons/linux-launcher.png" alt="Linux" class="icon"/>Linux
+        </button>
+        <button id="macos-tab"
+                class="tab"
+                hx-get="/components/macosClient.html"
+                hx-target="#content-area"
+                hx-swap="innerHTML">
+            <img src="/icons/macos-launcher.png" alt="Apple Silicon" class="icon"/>Apple Silicon
+        </button>
     </div>
 
     <!-- Content Area - Load registration component on page load -->

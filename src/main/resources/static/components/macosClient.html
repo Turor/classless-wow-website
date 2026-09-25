@@ -1,0 +1,44 @@
+<div class="macos-client">
+    <h2>Apple Silicon / macOS</h2>
+    <p>
+        Classless does not yet ship a dedicated macOS launcher zip. Until
+        <code>ClasslessLauncherMacos.zip</code> is published to the object store,
+        use <strong>WoWSilicon</strong> to run classic clients on Apple Silicon, then
+        point the realmlist at this server.
+    </p>
+
+    <h3>Recommended: WoWSilicon</h3>
+    <p>
+        <a href="https://github.com/WoWSilicon/WoWSilicon" target="_blank" rel="noopener noreferrer">WoWSilicon</a>
+        is an open-source macOS launcher for Vanilla 1.12.1, TBC 2.4.3, and WotLK 3.3.5a
+        on Apple Silicon. It bundles a Wine runtime and client patching tools.
+    </p>
+    <ul>
+        <li>Project: <a href="https://github.com/WoWSilicon/WoWSilicon" target="_blank" rel="noopener noreferrer">github.com/WoWSilicon/WoWSilicon</a></li>
+        <li>Downloads / site: <a href="https://wowsilicon.github.io/" target="_blank" rel="noopener noreferrer">wowsilicon.github.io</a></li>
+        <li>Requirements: Apple Silicon Mac, recent macOS, a legally acquired local WoW client folder</li>
+    </ul>
+
+    <h3>Classless launcher pipeline (coming soon)</h3>
+    <p>
+        The website and API already expose the same download hooks used for Windows and Linux:
+    </p>
+    <ul>
+        <li><code>GET /files/download/macos</code> → redirects to the launcher stream</li>
+        <li><code>GET /files/downloadlauncher/macos</code> → streams the zip when published</li>
+        <li><code>GET /files/launchers</code> → reports per-platform availability</li>
+        <li>Config key: <code>launcherservice.macosLauncherName</code> (default <code>ClasslessLauncherMacos.zip</code>)</li>
+    </ul>
+    <p class="macos-todo">
+        <strong>TODO:</strong> upload a macOS Classless launcher artifact to the <code>wow</code> bucket
+        under the configured object name. Until then, the download endpoint returns 404 by design.
+    </p>
+
+    <button class="tab macos-download"
+            type="button"
+            hx-get="/files/download/macos"
+            hx-swap="none"
+            title="Available only after ClasslessLauncherMacos.zip is published">
+        Try Classless macOS launcher download
+    </button>
+</div>

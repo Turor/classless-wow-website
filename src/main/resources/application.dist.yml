@@ -20,7 +20,10 @@ garage.s3:
 
 launcherservice:
   cacheDir: src/main/resources/static/cache # must match static-locations in spring.web.resources.static-locations
-  launcherName: ClasslessLauncher.zip
+  windowsLauncherName: ClasslessLauncher.zip
+  linuxLauncherName: ClasslessLauncherLinux.zip
+  # Optional until a macOS Classless launcher zip is published to the object store.
+  macosLauncherName: ClasslessLauncherMacos.zip
 
 spring:
   profiles:

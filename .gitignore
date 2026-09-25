@@ -6,11 +6,25 @@ build/
 !**/src/test/**/build/
 compose.yaml
 
-ClasslessLauncher.zip
+# Local / generated launcher caches and binaries — never publish
+ClasslessLauncher*.zip
+cache/
+src/main/resources/static/cache/
 launchericon.png
 local-keystore.p12
+**/local-keystore.p12
+*.jks
+*.p12
+*.pem
+*.key
 
+# Secrets and local runtime state — use application.dist.yml as the public template
 application.yml
+**/application.yml
+!src/main/resources/application.dist.yml
+recovery.db
+*.db
+wow-keys*.json
 
 ### STS ###
 .apt_generated

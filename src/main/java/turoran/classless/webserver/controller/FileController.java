@@ -2,11 +2,10 @@ package turoran.classless.webserver.controller;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.core.io.Resource;
-import org.springframework.core.io.UrlResource;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -18,7 +17,10 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
 import java.nio.file.Files;
+import java.nio.file.Path;
 import java.time.Duration;
+import java.util.LinkedHashMap;
+import java.util.Map;
 
 @RestController
 @RequestMapping("/files")
@@ -40,31 +42,74 @@ public class FileController {
         return ResponseEntity.ok(url.toString());
     }
 
-    @GetMapping(value="/downloadlauncher", produces = "application/zip")
-    public ResponseEntity<StreamingResponseBody> serveLauncher() throws IOException {
-        try {
-            launcherService.synchronizeClient();
-        } catch (Exception e) {
-            log.error("Failed to synchronize ClasslessLauncher.zip: {}", e.getMessage());
+    /** Availability map for UI (windows/linux/macos → cached locally after sync). */
+    @GetMapping("/launchers")
+    public ResponseEntity<Map<String, Object>> listLaunchers() {
+        Map<String, Object> platforms = new LinkedHashMap<>();
+        for (String platform : launcherService.supportedPlatforms()) {
+            Map<String, Object> info = new LinkedHashMap<>();
+            info.put("available", launcherService.isAvailable(platform));
+            info.put("fileName", launcherService.fileName(platform));
+            info.put("downloadPath", "/files/download/" + platform);
+            platforms.put(platform, info);
+        }
+        return ResponseEntity.ok(Map.of("platforms", platforms));
+    }
+
+    @GetMapping(value = "/downloadlauncher", produces = "application/zip")
+    public ResponseEntity<StreamingResponseBody> serveWindowsLauncher() throws IOException {
+        return serveLauncher(LauncherService.PLATFORM_WINDOWS);
+    }
+
+    @GetMapping(value = "/downloadlauncher/{platform}", produces = "application/zip")
+    public ResponseEntity<StreamingResponseBody> serveLauncher(@PathVariable String platform) throws IOException {
+        if (!launcherService.isKnownPlatform(platform)) {
+            return ResponseEntity.badRequest().build();
         }
 
+        try {
+            launcherService.synchronizeClient(platform);
+        } catch (IllegalArgumentException e) {
+            return ResponseEntity.badRequest().build();
+        } catch (Exception e) {
+            log.error("Failed to synchronize launcher for {}: {}", platform, e.getMessage());
+        }
+
+        if (!launcherService.isAvailable(platform)) {
+            // macOS (and any unpublished platform): hooks exist, binary not published yet.
+            return ResponseEntity.notFound().build();
+        }
+
+        Path zipPath = launcherService.zipPath(platform);
+        String fileName = launcherService.fileName(platform);
         StreamingResponseBody responseBody = outputStream -> {
-            try (InputStream in = Files.newInputStream(launcherService.zipPath)) {
+            try (InputStream in = Files.newInputStream(zipPath)) {
                 in.transferTo(outputStream);
             }
         };
         return ResponseEntity.ok()
-                .header("Content-Disposition", "attachment; filename=\"ClasslessLauncher.zip\"")
+                .header("Content-Disposition", "attachment; filename=\"" + fileName + "\"")
                 .contentType(MediaType.APPLICATION_OCTET_STREAM)
-                .contentLength(Files.size(launcherService.zipPath))
+                .contentLength(Files.size(zipPath))
                 .body(responseBody);
     }
 
-    @GetMapping(value="/download")
-    public ResponseEntity<Void> getLauncher() {
+    @GetMapping(value = "/download")
+    public ResponseEntity<Void> getWindowsLauncher() {
+        return redirectToLauncher(LauncherService.PLATFORM_WINDOWS);
+    }
+
+    @GetMapping(value = "/download/{platform}")
+    public ResponseEntity<Void> getLauncher(@PathVariable String platform) {
+        if (!launcherService.isKnownPlatform(platform)) {
+            return ResponseEntity.badRequest().build();
+        }
+        return redirectToLauncher(platform);
+    }
+
+    private ResponseEntity<Void> redirectToLauncher(String platform) {
         return ResponseEntity.ok()
-                .header("HX-Redirect", "/files/downloadlauncher")
+                .header("HX-Redirect", "/files/downloadlauncher/" + platform)
                 .build();
     }
 }
-
