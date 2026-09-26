@@ -45,6 +45,12 @@ body {
     gap: 6px;
 }
 
+a.tab {
+    text-decoration: none;
+    color: inherit;
+    box-sizing: border-box;
+}
+
 .tab:last-child {
     border-right: none;
 }
