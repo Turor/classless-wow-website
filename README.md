@@ -25,7 +25,7 @@ Key config areas (placeholders only in the dist file):
 | Linux | Download Linux | `GET /files/download/linux` → `/files/downloadlauncher/linux` | `launcherservice.linuxLauncherName` |
 | macOS / Apple Silicon | Apple Silicon tab | `GET /files/download/macos` → `/files/downloadlauncher/macos` | `launcherservice.macosLauncherName` |
 
-macOS: a Classless launcher zip is not published yet. The UI documents [WoWSilicon](https://github.com/WoWSilicon/WoWSilicon) for running classic clients on Apple Silicon and exposes the same download hooks for a future `ClasslessLauncherMacos.zip` (or configured name) in the object store.
+macOS / Apple Silicon: publish `ClasslessLauncherMacos.zip` to bucket `wow` and allowlist `ClasslessLauncherMacos.zip` plus `mirrors/WoWSilicon.app.zip` for the shell launcher's WoWSilicon bootstrap. The Apple Silicon tab documents unsigned install + `xattr` quarantine removal and WrathSilicon profile setup.
 
 ## Build
 

@@ -1,42 +1,54 @@
 <div class="macos-client">
     <h2>Apple Silicon / macOS</h2>
     <p>
-        Classless does not yet ship a dedicated macOS launcher zip. Until
-        <code>ClasslessLauncherMacos.zip</code> is published to the object store,
-        use <strong>WoWSilicon</strong> to run classic clients on Apple Silicon, then
-        point the realmlist at this server.
+        Classless ships an <strong>unsigned</strong> shell launcher,
+        <code>ClasslessLauncherMacos.zip</code>, that syncs the shared game
+        folder from Garage and hands off to
+        <a href="https://wowsilicon.github.io/" target="_blank" rel="noopener noreferrer">WoWSilicon</a>.
+        It never runs <code>wow.exe</code> natively.
     </p>
 
-    <h3>Recommended: WoWSilicon</h3>
-    <p>
-        <a href="https://github.com/WoWSilicon/WoWSilicon" target="_blank" rel="noopener noreferrer">WoWSilicon</a>
-        is an open-source macOS launcher for Vanilla 1.12.1, TBC 2.4.3, and WotLK 3.3.5a
-        on Apple Silicon. It bundles a Wine runtime and client patching tools.
-    </p>
-    <ul>
-        <li>Project: <a href="https://github.com/WoWSilicon/WoWSilicon" target="_blank" rel="noopener noreferrer">github.com/WoWSilicon/WoWSilicon</a></li>
-        <li>Downloads / site: <a href="https://wowsilicon.github.io/" target="_blank" rel="noopener noreferrer">wowsilicon.github.io</a></li>
-        <li>Requirements: Apple Silicon Mac, recent macOS, a legally acquired local WoW client folder</li>
-    </ul>
-
-    <h3>Classless launcher pipeline (coming soon)</h3>
-    <p>
-        The website and API already expose the same download hooks used for Windows and Linux:
-    </p>
-    <ul>
-        <li><code>GET /files/download/macos</code> → redirects to the launcher stream</li>
-        <li><code>GET /files/downloadlauncher/macos</code> → streams the zip when published</li>
-        <li><code>GET /files/launchers</code> → reports per-platform availability</li>
-        <li>Config key: <code>launcherservice.macosLauncherName</code> (default <code>ClasslessLauncherMacos.zip</code>)</li>
-    </ul>
-    <p class="macos-todo">
-        <strong>TODO:</strong> upload a macOS Classless launcher artifact to the <code>wow</code> bucket
-        under the configured object name. Until then, the download endpoint returns 404 by design.
-    </p>
+    <h3>Install ClasslessLauncherMacos</h3>
+    <ol>
+        <li>Download via the button below (or <code>GET /files/downloadlauncher/macos</code>).</li>
+        <li>Create a game folder, e.g. <code>~/Games/ClasslessWoW</code>, and unzip
+            <code>ClasslessLauncherMacos.zip</code> into it (Archive Utility is fine — real zip).</li>
+        <li>Clear Gatekeeper quarantine (no Apple Developer ID / notarization):
+            <pre><code>xattr -dr com.apple.quarantine ~/Games/ClasslessWoW/ClasslessLauncherMacos.app</code></pre>
+        </li>
+        <li>Install p7zip once (needed to extract <code>GameClient.7z</code> on first run):
+            <pre><code>brew install p7zip</code></pre>
+        </li>
+        <li>Open <code>ClasslessLauncherMacos.app</code>. First run may download the client
+            (~17&nbsp;GB), sync <code>patch-n.mpq</code>, and install a Turoran mirror of
+            WoWSilicon into <code>~/Applications</code> if missing.</li>
+    </ol>
 
     <a class="tab macos-download"
        href="/files/downloadlauncher/macos"
-       title="Available only after ClasslessLauncherMacos.zip is published">
-        Try Classless macOS launcher download
+       title="Streams ClasslessLauncherMacos.zip from the object store">
+        Download Classless macOS launcher
     </a>
+
+    <h3>WoWSilicon profile</h3>
+    <ul>
+        <li>Project: <a href="https://github.com/WoWSilicon/WoWSilicon" target="_blank" rel="noopener noreferrer">github.com/WoWSilicon/WoWSilicon</a></li>
+        <li>Site / upstream downloads: <a href="https://wowsilicon.github.io/" target="_blank" rel="noopener noreferrer">wowsilicon.github.io</a></li>
+        <li>Requirements: Apple Silicon Mac (M1+), macOS 15+</li>
+        <li>In WoWSilicon, create/select a <strong>WrathSilicon (3.3.5a)</strong> or Custom
+            profile and point it at your Classless game folder, then Patch once.</li>
+        <li>If Gatekeeper blocks WoWSilicon:
+            <pre><code>xattr -dr com.apple.quarantine ~/Applications/WoWSilicon.app
+# or: /Applications/WoWSilicon.app</code></pre>
+        </li>
+    </ul>
+
+    <h3>API / object names</h3>
+    <ul>
+        <li><code>GET /files/download/macos</code> → redirects to the launcher stream</li>
+        <li><code>GET /files/downloadlauncher/macos</code> → streams <code>ClasslessLauncherMacos.zip</code></li>
+        <li><code>GET /files/launchers</code> → per-platform availability</li>
+        <li>Config key: <code>launcherservice.macosLauncherName</code> (default <code>ClasslessLauncherMacos.zip</code>)</li>
+        <li>WoWSilicon Turoran mirror key: <code>mirrors/WoWSilicon.app.zip</code> (presign allowlisted)</li>
+    </ul>
 </div>
