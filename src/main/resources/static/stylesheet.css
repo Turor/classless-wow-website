@@ -6,29 +6,32 @@ body {
     align-items: center;
     min-height: 100vh;
     margin: 0;
-    padding: 20px;
+    padding: 12px;
 }
 
 .title {
     text-align: center;
-    margin-bottom: 30px;
+    margin: 14px 12px 10px;
     color: #333;
+    font-size: 1.35rem;
 }
 
 .container {
     background: #fff;
-    border: 2px solid #000;
+    border: 1px solid #d0d0d0;
     border-radius: 8px;
     width: 100%;
-    max-width: 600px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    max-width: 560px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
 }
 
-/* Tab Navigation */
+/* Tab Navigation — segmented header inside the outer card */
 .tabs {
     display: flex;
     flex-direction: column;
-    border-bottom: 2px solid #000;
+    border-bottom: 1px solid #d0d0d0;
+    background: #fafafa;
 }
 
 .tab-row {
@@ -36,20 +39,20 @@ body {
     width: 100%;
 }
 
-.tab-row + .tab-row .tab {
-    border-top-width: 0;
+.tab-row + .tab-row {
+    border-top: 1px solid #d0d0d0;
 }
 
 .tab {
     flex: 1 1 0;
     min-width: 0;
-    padding: 12px 10px;
-    border: 2px solid #000;
-    border-right-width: 0;
-    background: #fff;
+    padding: 8px 6px;
+    border: none;
+    border-right: 1px solid #d0d0d0;
+    background: transparent;
     cursor: pointer;
-    font-size: 14px;
-    transition: background-color 0.3s;
+    font-size: 13px;
+    transition: background-color 0.2s, color 0.2s;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -58,7 +61,7 @@ body {
 }
 
 .tab-row .tab:last-child {
-    border-right-width: 2px;
+    border-right: none;
 }
 
 a.tab {
@@ -76,33 +79,69 @@ a.tab {
     color: #fff;
 }
 
+.tab.active:hover {
+    background: #0066b8;
+}
+
 /* icon inside tab */
 .tab img.icon {
-    width: 40px;
-    height: 40px;
+    width: 22px;
+    height: 22px;
     display: inline-block;
     vertical-align: middle;
     object-fit: cover;
     border-radius: 3px;
+    flex-shrink: 0;
 }
 
-/* Content Area */
+/* Content Area — no inner wireframe box */
 .content {
-    padding: 30px;
-    min-height: 300px;
-    border: 2px solid #000;
-    margin: 10px;
-    border-radius: 4px;
+    padding: 16px 18px 18px;
+    min-height: 0;
+    border: none;
+    margin: 0;
+    background: #fff;
+}
+
+.content h2 {
+    margin: 0 0 12px;
+    font-size: 1.15rem;
+    color: #333;
 }
 
 /* Form Styles */
-input, button {
-    padding: 10px;
-    margin: 10px 0;
+.form-field {
+    margin-bottom: 10px;
+}
+
+.form-field label,
+.form-group label {
+    display: block;
+    margin: 0 0 4px;
+    font-weight: bold;
+    font-size: 13px;
+    color: #333;
+}
+
+.form-group {
+    margin-bottom: 10px;
+}
+
+.form-feedback {
+    text-align: center;
+    padding: 8px 0 0;
+    font-size: 13px;
+}
+
+input,
+button {
+    padding: 8px 10px;
+    margin: 0;
     width: 100%;
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
+    font-size: 14px;
 }
 
 button[type="submit"] {
@@ -110,44 +149,94 @@ button[type="submit"] {
     color: #fff;
     border: none;
     cursor: pointer;
-    font-size: 16px;
+    font-size: 15px;
+    margin-top: 4px;
+    max-width: 320px;
 }
 
 button[type="submit"]:hover {
     background: #005BB5;
 }
 
-label {
-    display: block;
-    margin-top: 10px;
-    font-weight: bold;
-}
-
+/* Legacy table forms (if any remain) */
 table {
     width: 100%;
+    border-collapse: collapse;
 }
 
 table td {
-    padding: 5px;
+    padding: 4px 6px;
+    vertical-align: middle;
 }
 
+table td:first-child {
+    width: 1%;
+    white-space: nowrap;
+    padding-right: 10px;
+}
+
+table label {
+    margin-top: 0;
+    font-size: 13px;
+}
 
 /* Apple Silicon / macOS client offering panel */
 .macos-client h2 {
     margin-top: 0;
 }
-.macos-client ul {
-    margin: 0.5rem 0 1rem 1.25rem;
+
+.macos-client h3 {
+    margin: 14px 0 6px;
+    font-size: 1rem;
 }
+
+.macos-client p {
+    margin: 0 0 8px;
+    line-height: 1.45;
+    font-size: 14px;
+}
+
+.macos-client ul {
+    margin: 0.4rem 0 0.8rem 1.25rem;
+    font-size: 14px;
+}
+
 .macos-client a {
     color: #0b57d0;
 }
+
 .macos-todo {
-    border: 2px dashed #000;
-    padding: 10px 12px;
+    border: 1px dashed #c9a227;
+    padding: 8px 10px;
     background: #fff8e1;
+    border-radius: 4px;
+    font-size: 13px;
 }
+
 .macos-download {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     margin-top: 12px;
-    width: 100%;
+    width: auto;
+    max-width: 100%;
+    padding: 8px 14px;
+    border: none;
+    border-radius: 4px;
+    background: #0078D7;
+    color: #fff !important;
+    font-size: 14px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.macos-download:hover {
+    background: #005BB5;
+}
+
+.recovery-intro {
+    margin: 0 0 12px;
+    font-size: 14px;
+    line-height: 1.45;
+    color: #444;
 }
