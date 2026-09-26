@@ -26,12 +26,31 @@ public class PasswordGateInterceptor implements HandlerInterceptor {
             return true;
         }
 
+        boolean authenticated = Boolean.TRUE.equals(request.getSession().getAttribute("authenticated"));
+        boolean htmx = "true".equalsIgnoreCase(request.getHeader("HX-Request"));
+
+        // HTMX partials are not full documents. A full-page navigation/refresh to a
+        // /components/* URL must bounce back to the login shell at "/".
+        if (!htmx && uri.startsWith("/components/")) {
+            log.info("Redirecting full-page component request to login shell: {}", uri);
+            response.sendRedirect("/");
+            return false;
+        }
+
         // Already logged in
-        if (Boolean.TRUE.equals(request.getSession().getAttribute("authenticated"))) {
+        if (authenticated) {
             log.info("Allowing request because the user is logged in");
             return true;
         }
 
+        // Unauthenticated: send the user to the password gate instead of a blank deny.
+        log.info("Unauthenticated request to {}; redirecting to login", uri);
+        if (htmx) {
+            response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
+            response.setHeader("HX-Redirect", "/");
+        } else {
+            response.sendRedirect("/");
+        }
         return false;
     }
 }
