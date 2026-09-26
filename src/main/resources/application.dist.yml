@@ -1,18 +1,21 @@
 password: letmein
 
 garage.s3:
-  allowlist: # Comma separated list of allowed buckets and keys for S3 access.
-    bucket:
-      - bucket1
-      - bucket2
+  allowlist: # Exact keys the launcher may presign (no secrets here).
+    buckets:
+      - wow
     keys:
-      - list
-      - of
-      - keys
-    prefixes:
-      - key
-      - prefixes
-      - allowed
+      - GameClient.7z
+      - Wow.exe
+      - wow.exe
+      - manifest.json
+      - manifest.json.sig
+      - patch-n.mpq
+      - ClasslessLauncher.zip
+      - ClasslessLauncherLinux.zip
+      - ClasslessLauncherMacos.zip
+      - mirrors/WoWSilicon.app.zip
+      - mirrors/WoWSilicon.app.zip.SOURCE.txt
   endpoint:
     local: http://localhost:3900
     # Garage doesn't support TLS termination at the node level yet, so we have to use a proxy like HAProxy to handle TLS termination
@@ -22,7 +25,6 @@ launcherservice:
   cacheDir: src/main/resources/static/cache # must match static-locations in spring.web.resources.static-locations
   windowsLauncherName: ClasslessLauncher.zip
   linuxLauncherName: ClasslessLauncherLinux.zip
-  # Optional until a macOS Classless launcher zip is published to the object store.
   macosLauncherName: ClasslessLauncherMacos.zip
 
 spring:
