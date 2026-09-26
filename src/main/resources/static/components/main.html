@@ -2,33 +2,37 @@
     <!-- Tab Navigation -->
     <h1 class="title">Turoran's Classless Wow</h1>
     <div class="tabs">
-        <button id="registration-tab"
-                class="tab"
-                hx-get="/components/registration.html"
-                hx-target="#content-area"
-                hx-swap="innerHTML">
-            Account Registration
-        </button>
-        <button id="recovery-tab"
-                class="tab"
-                hx-get="/components/accountRecovery.html"
-                hx-target="#content-area"
-                hx-swap="innerHTML">
-            Account Recovery
-        </button>
-        <a class="tab" href="/files/downloadlauncher/windows">
-            <img src="/icons/windows-launcher.png" alt="Windows" class="icon"/>Windows
-        </a>
-        <a class="tab" href="/files/downloadlauncher/linux">
-            <img src="/icons/linux-launcher.png" alt="Linux" class="icon"/>Linux
-        </a>
-        <button id="macos-tab"
-                class="tab"
-                hx-get="/components/macosClient.html"
-                hx-target="#content-area"
-                hx-swap="innerHTML">
-            <img src="/icons/macos-launcher.png" alt="Apple Silicon" class="icon"/>Apple Silicon
-        </button>
+        <div class="tab-row">
+            <button id="registration-tab"
+                    class="tab"
+                    hx-get="/components/registration.html"
+                    hx-target="#content-area"
+                    hx-swap="innerHTML">
+                Account Registration
+            </button>
+            <button id="recovery-tab"
+                    class="tab"
+                    hx-get="/components/accountRecovery.html"
+                    hx-target="#content-area"
+                    hx-swap="innerHTML">
+                Account Recovery
+            </button>
+        </div>
+        <div class="tab-row">
+            <a class="tab" href="/files/downloadlauncher/windows">
+                <img src="/icons/windows-launcher.png" alt="Windows" class="icon"/>Windows
+            </a>
+            <a class="tab" href="/files/downloadlauncher/linux">
+                <img src="/icons/linux-launcher.png" alt="Linux" class="icon"/>Linux
+            </a>
+            <button id="macos-tab"
+                    class="tab"
+                    hx-get="/components/macosClient.html"
+                    hx-target="#content-area"
+                    hx-swap="innerHTML">
+                <img src="/icons/macos-launcher.png" alt="Apple Silicon" class="icon"/>Apple Silicon
+            </button>
+        </div>
     </div>
 
     <!-- Content Area - Load registration component on page load -->

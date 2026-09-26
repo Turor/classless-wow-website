@@ -27,14 +27,25 @@ body {
 /* Tab Navigation */
 .tabs {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
     border-bottom: 2px solid #000;
 }
 
+.tab-row {
+    display: flex;
+    width: 100%;
+}
+
+.tab-row + .tab-row .tab {
+    border-top-width: 0;
+}
+
 .tab {
-    flex: 1 1 140px;
+    flex: 1 1 0;
+    min-width: 0;
     padding: 12px 10px;
     border: 2px solid #000;
+    border-right-width: 0;
     background: #fff;
     cursor: pointer;
     font-size: 14px;
@@ -43,16 +54,17 @@ body {
     align-items: center;
     justify-content: center;
     gap: 6px;
+    box-sizing: border-box;
+}
+
+.tab-row .tab:last-child {
+    border-right-width: 2px;
 }
 
 a.tab {
     text-decoration: none;
     color: inherit;
     box-sizing: border-box;
-}
-
-.tab:last-child {
-    border-right: none;
 }
 
 .tab:hover {
