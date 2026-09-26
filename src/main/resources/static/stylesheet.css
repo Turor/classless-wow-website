@@ -46,7 +46,7 @@ body {
 .tab {
     flex: 1 1 0;
     min-width: 0;
-    padding: 14px 12px;
+    padding: 8px 10px;
     border: none;
     border-right: 1px solid #d0d0d0;
     background: transparent;
@@ -85,8 +85,8 @@ a.tab {
 
 /* icon inside tab */
 .tab img.icon {
-    width: 36px;
-    height: 36px;
+    width: 48px;
+    height: 48px;
     display: inline-block;
     vertical-align: middle;
     object-fit: cover;
