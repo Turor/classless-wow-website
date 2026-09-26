@@ -1,17 +1,40 @@
 # Classless Wow Web Server
-This web server is designed to support basic account creation and recovery for a classless server.
-Account recovery is facilitated by manually relaying a generated token to the user.
-The server generates presigned s3 urls to support a companion launcher which uses bucket keys to presigned urls for resources.
-The server allows users to download a game launcher
 
-## Implementation Notes
-I've deployed this webserver on a debian 13 distribution and set it up as a systemd service. Here's the commands I use quite a bit, mostly as personal notes.
+This web server supports basic account creation and recovery for a Classless WoW server.
 
-/usr/games/wow/classless-wow-website
-journalctl -u classless-web-server -f
-systemctl restart classless-wow-webserver.service
+- Account recovery is facilitated by manually relaying a generated token to the user.
+- The server generates presigned S3 URLs so a companion launcher can fetch game resources by bucket key.
+- Authenticated users can download platform launchers (Windows, Linux, and Apple Silicon / macOS when published).
+
+## Configuration
+
+Copy `src/main/resources/application.dist.yml` to `src/main/resources/application.yml` (gitignored) and fill in local values. Never commit real credentials, keystores, recovery databases, or launcher zip caches.
+
+Key config areas (placeholders only in the dist file):
+
+- Gate password and Spring profile (`dev` / `prod` / `test`)
+- Garage / S3 endpoint, allowlist, and credentials (via environment or local yml)
+- MySQL auth DB and SQLite recovery DB URLs
+- `launcherservice.*` cache directory and per-platform launcher object names
+
+## Launcher downloads
+
+| Platform | UI | API | Object name (configurable) |
+|----------|----|-----|----------------------------|
+| Windows | Download Windows | `GET /files/download/windows` → `/files/downloadlauncher/windows` | `launcherservice.windowsLauncherName` |
+| Linux | Download Linux | `GET /files/download/linux` → `/files/downloadlauncher/linux` | `launcherservice.linuxLauncherName` |
+| macOS / Apple Silicon | Apple Silicon tab | `GET /files/download/macos` → `/files/downloadlauncher/macos` | `launcherservice.macosLauncherName` |
+
+macOS: a Classless launcher zip is not published yet. The UI documents [WoWSilicon](https://github.com/WoWSilicon/WoWSilicon) for running classic clients on Apple Silicon and exposes the same download hooks for a future `ClasslessLauncherMacos.zip` (or configured name) in the object store.
+
+## Build
+
+```bash
 ./gradlew build bootJar
-cp ./build/libs/classless-wow-webserver-0.0.1-SNAPSHOT.jar /opt/classless-web-server/app.jar
-nano /opt/classless-web-server/application.yml
+```
 
-scp registration@registration-dev.turoran.com:/var/lib/classless-web-server/recovery.db D:\CustomWowRebuild\recovery.db
+Run with a local `application.yml` and required services (MySQL and/or SQLite, Garage/S3 as configured).
+
+## Deploy notes
+
+Deploy as a normal Spring Boot service behind your preferred reverse proxy / TLS terminator. Keep production `application.yml`, keystores, and `recovery.db` on the host only — outside this repository.

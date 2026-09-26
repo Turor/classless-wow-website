@@ -27,20 +27,22 @@ body {
 /* Tab Navigation */
 .tabs {
     display: flex;
+    flex-wrap: wrap;
     border-bottom: 2px solid #000;
 }
 
 .tab {
-    flex: 1;
-    padding: 15px 20px;
+    flex: 1 1 140px;
+    padding: 12px 10px;
     border: 2px solid #000;
     background: #fff;
     cursor: pointer;
-    font-size: 16px;
+    font-size: 14px;
     transition: background-color 0.3s;
     display: flex;
     align-items: center;
     justify-content: center;
+    gap: 6px;
 }
 
 .tab:last-child {
@@ -58,11 +60,12 @@ body {
 
 /* icon inside tab */
 .tab img.icon {
-    width: 20px;
-    height: 20px;
-    margin-right: 8px;
+    width: 40px;
+    height: 40px;
     display: inline-block;
     vertical-align: middle;
+    object-fit: cover;
+    border-radius: 3px;
 }
 
 /* Content Area */
@@ -108,4 +111,25 @@ table {
 
 table td {
     padding: 5px;
+}
+
+
+/* Apple Silicon / macOS client offering panel */
+.macos-client h2 {
+    margin-top: 0;
+}
+.macos-client ul {
+    margin: 0.5rem 0 1rem 1.25rem;
+}
+.macos-client a {
+    color: #0b57d0;
+}
+.macos-todo {
+    border: 2px dashed #000;
+    padding: 10px 12px;
+    background: #fff8e1;
+}
+.macos-download {
+    margin-top: 12px;
+    width: 100%;
 }
