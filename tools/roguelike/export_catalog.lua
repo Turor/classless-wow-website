@@ -64,9 +64,10 @@ local function export(kind, cat)
     for id, e in pairs(cat) do
         if not e.retired and (not B.offerable or B.offerable(kind, id)) then
             local desc, tags = clean(e.desc or "")
+            if e.season then desc = desc:gsub("%s*Season: [^\n]-%.$", "") end   -- shown as a badge instead
             list[#list + 1] = { id = id, kind = kind, type = e.type, typeName = (B.TYPE_NAMES or {})[e.type] or e.type,
                 cat = e.cat, name = e.name, icon = e.icon, desc = desc, tags = tags,
-                goal = e.goal and { kind = e.goal.kind, n = e.goal.n } or nil, noWildCard = e.noWild or nil,
+                season = e.season, goal = e.goal and { kind = e.goal.kind, n = e.goal.n } or nil, noWildCard = e.noWild or nil,
                 requires = e.requires }
         end
     end
