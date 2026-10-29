@@ -808,6 +808,7 @@
             "id": 201,
             "kind": "curse",
             "name": "Fortified",
+            "season": "Legion 7.0 (base affix of every season since)",
             "tags": [],
             "type": "affix",
             "typeName": "Dungeon Affix"
@@ -819,6 +820,7 @@
             "id": 202,
             "kind": "curse",
             "name": "Tyrannical",
+            "season": "Legion 7.0 (base affix of every season since)",
             "tags": [],
             "type": "affix",
             "typeName": "Dungeon Affix"
@@ -830,6 +832,7 @@
             "id": 203,
             "kind": "curse",
             "name": "Bolstering",
+            "season": "Legion 7.0",
             "tags": [],
             "type": "affix",
             "typeName": "Dungeon Affix"
@@ -841,6 +844,7 @@
             "id": 204,
             "kind": "curse",
             "name": "Raging",
+            "season": "Legion 7.0",
             "tags": [],
             "type": "affix",
             "typeName": "Dungeon Affix"
@@ -852,6 +856,7 @@
             "id": 205,
             "kind": "curse",
             "name": "Necrotic",
+            "season": "Legion 7.0",
             "tags": [],
             "type": "affix",
             "typeName": "Dungeon Affix"
@@ -863,6 +868,7 @@
             "id": 206,
             "kind": "curse",
             "name": "Grievous",
+            "season": "Legion 7.2",
             "tags": [],
             "type": "affix",
             "typeName": "Dungeon Affix"
@@ -874,6 +880,7 @@
             "id": 207,
             "kind": "curse",
             "name": "Bursting",
+            "season": "Legion 7.2",
             "tags": [],
             "type": "affix",
             "typeName": "Dungeon Affix"
@@ -885,6 +892,7 @@
             "id": 208,
             "kind": "curse",
             "name": "Quaking",
+            "season": "Legion 7.2",
             "tags": [],
             "type": "affix",
             "typeName": "Dungeon Affix"
@@ -896,6 +904,67 @@
             "id": 209,
             "kind": "curse",
             "name": "Volcanic",
+            "season": "Legion 7.0",
+            "tags": [],
+            "type": "affix",
+            "typeName": "Dungeon Affix"
+        },
+        {
+            "cat": "dungeon",
+            "desc": "Dungeon affix: when a non-boss enemy dies it leaves a purple ichor pool (5 yd) for 15 sec; enemies inside heal 5% max health per sec, players inside take 3% max health per sec. Pull enemies out of it.",
+            "icon": "Spell_Shadow_BloodBoil",
+            "id": 210,
+            "kind": "curse",
+            "name": "Sanguine",
+            "season": "Legion 7.0",
+            "tags": [],
+            "type": "affix",
+            "typeName": "Dungeon Affix"
+        },
+        {
+            "cat": "dungeon",
+            "desc": "Dungeon affix: every 10 sec in combat an Explosive orb appears near a player; kill it (it has very little health) within 6 sec or it detonates for 10% max health on every player within 60 yd.",
+            "icon": "Spell_Fire_Fireball02",
+            "id": 211,
+            "kind": "curse",
+            "name": "Explosive",
+            "season": "Legion 7.2",
+            "tags": [],
+            "type": "affix",
+            "typeName": "Dungeon Affix"
+        },
+        {
+            "cat": "dungeon",
+            "desc": "Dungeon affix: when a non-boss enemy dies a Spiteful Shade rises for 8 sec, fixates a random player nearby and chases them at 4.5 yd/sec (you run 7); while it touches you it deals 5% max health per sec. It cannot be attacked: kite it.",
+            "icon": "Spell_Shadow_ShadowWordPain",
+            "id": 212,
+            "kind": "curse",
+            "name": "Spiteful",
+            "season": "Shadowlands Season 1 (9.0)",
+            "tags": [],
+            "type": "affix",
+            "typeName": "Dungeon Affix"
+        },
+        {
+            "cat": "dungeon",
+            "desc": "Dungeon affix: every 20 sec in combat a whirlwind spawns near a player and chases them for 8 sec at 3.5 yd/sec; touching it (2.5 yd) deals 6% max health and knocks you up. Sidestep it.",
+            "icon": "Spell_Nature_Cyclone",
+            "id": 213,
+            "kind": "curse",
+            "name": "Storming",
+            "season": "Shadowlands Season 1 (9.0)",
+            "tags": [],
+            "type": "affix",
+            "typeName": "Dungeon Affix"
+        },
+        {
+            "cat": "dungeon",
+            "desc": "Dungeon affix: every 15 sec in combat a blue vine ring (4 yd) sprouts under a player; 4 sec later everyone still inside is rooted for 4 sec.",
+            "icon": "Spell_Nature_StrangleVines",
+            "id": 214,
+            "kind": "curse",
+            "name": "Entangling",
+            "season": "Dragonflight Season 2 (10.1)",
             "tags": [],
             "type": "affix",
             "typeName": "Dungeon Affix"
@@ -1296,7 +1365,7 @@
     ],
     "source": {
         "branch": "feature/gauntlet-hero",
-        "commit": "b93a880",
+        "commit": "2a871f7",
         "file": "lua_scripts/Gauntlet/GauntletBoons.lua",
         "repo": "Turor/mod-turoran-roguelike"
     }

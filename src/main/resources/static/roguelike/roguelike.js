@@ -39,6 +39,7 @@
             name.appendChild(el("span", "badge " + (t.toLowerCase() === "lethal" ? "lethal" : "muted"), t));
         });
         if (BADGE[e.type]) name.appendChild(el("span", "badge " + BADGE[e.type], e.typeName));
+        if (e.season) name.appendChild(el("span", "badge muted", e.season));
         if (e.requires === "mobileCast") name.appendChild(el("span", "badge muted", "needs new launcher"));
         body.appendChild(name);
         body.appendChild(el("div", "desc", e.desc));
