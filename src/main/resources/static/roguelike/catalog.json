@@ -1,0 +1,1303 @@
+{
+    "boons": [
+        {
+            "cat": "offense",
+            "desc": "+8% damage dealt.",
+            "icon": "Ability_Warrior_BattleShout",
+            "id": 1,
+            "kind": "boon",
+            "name": "Might",
+            "tags": [],
+            "type": "boon",
+            "typeName": "Boon"
+        },
+        {
+            "cat": "offense",
+            "desc": "+25% damage to targets below 35% health.",
+            "icon": "INV_Sword_48",
+            "id": 2,
+            "kind": "boon",
+            "name": "Executioner",
+            "tags": [],
+            "type": "boon",
+            "typeName": "Boon"
+        },
+        {
+            "cat": "offense",
+            "desc": "+30% damage to targets above 90% health (pull openers).",
+            "icon": "Ability_Rogue_Ambush",
+            "id": 3,
+            "kind": "boon",
+            "name": "Ambusher",
+            "tags": [],
+            "type": "boon",
+            "typeName": "Boon"
+        },
+        {
+            "cat": "offense",
+            "desc": "+15% damage to elites and bosses.",
+            "icon": "Ability_Warrior_DecisiveStrike",
+            "id": 4,
+            "kind": "boon",
+            "name": "Giantslayer",
+            "tags": [],
+            "type": "boon",
+            "typeName": "Boon"
+        },
+        {
+            "cat": "offense",
+            "desc": "6% chance for any hit to deal double damage.",
+            "icon": "INV_Misc_Coin_17",
+            "id": 5,
+            "kind": "boon",
+            "name": "Fortune's Edge",
+            "tags": [],
+            "type": "boon",
+            "typeName": "Boon"
+        },
+        {
+            "cat": "offense",
+            "desc": "+12% auto-attack damage (melee and ranged).",
+            "icon": "Ability_MeleeDamage",
+            "id": 6,
+            "kind": "boon",
+            "name": "Weapon Master",
+            "tags": [],
+            "type": "boon",
+            "typeName": "Boon"
+        },
+        {
+            "cat": "offense",
+            "desc": "+10% spell and ability damage.",
+            "icon": "Spell_Arcane_Blast",
+            "id": 7,
+            "kind": "boon",
+            "name": "Spellweaver",
+            "tags": [],
+            "type": "boon",
+            "typeName": "Boon"
+        },
+        {
+            "cat": "defense",
+            "desc": "8% less damage taken.",
+            "icon": "Spell_Nature_StoneSkinTotem",
+            "id": 8,
+            "kind": "boon",
+            "name": "Stoneskin",
+            "tags": [],
+            "type": "boon",
+            "typeName": "Boon"
+        },
+        {
+            "cat": "defense",
+            "desc": "30% less damage taken while below 35% health.",
+            "icon": "Spell_Holy_AshesToAshes",
+            "id": 9,
+            "kind": "boon",
+            "name": "Last Stand",
+            "tags": [],
+            "type": "boon",
+            "typeName": "Boon"
+        },
+        {
+            "cat": "defense",
+            "desc": "Reflect 20% of melee damage taken back at the attacker.",
+            "icon": "Spell_Nature_Thorns",
+            "id": 10,
+            "kind": "boon",
+            "name": "Thornhide",
+            "tags": [],
+            "type": "boon",
+            "typeName": "Boon"
+        },
+        {
+            "cat": "defense",
+            "desc": "+10% maximum health.",
+            "icon": "Spell_Holy_WordFortitude",
+            "id": 11,
+            "kind": "boon",
+            "name": "Vigor",
+            "tags": [],
+            "type": "boon",
+            "typeName": "Boon"
+        },
+        {
+            "cat": "sustain",
+            "desc": "Heal for 4% of the damage you deal.",
+            "icon": "Spell_Shadow_LifeDrain02",
+            "id": 12,
+            "kind": "boon",
+            "name": "Vampiric",
+            "tags": [],
+            "type": "boon",
+            "typeName": "Boon"
+        },
+        {
+            "cat": "sustain",
+            "desc": "+15% healing done.",
+            "icon": "Spell_Holy_FlashHeal",
+            "id": 13,
+            "kind": "boon",
+            "name": "Mender",
+            "tags": [],
+            "type": "boon",
+            "typeName": "Boon"
+        },
+        {
+            "cat": "sustain",
+            "desc": "+20% healing received.",
+            "icon": "Spell_Holy_Renew",
+            "id": 14,
+            "kind": "boon",
+            "name": "Blessed",
+            "tags": [],
+            "type": "boon",
+            "typeName": "Boon"
+        },
+        {
+            "cat": "sustain",
+            "desc": "Each kill restores 6% of your maximum health.",
+            "icon": "Spell_Nature_BloodLust",
+            "id": 15,
+            "kind": "boon",
+            "name": "Bloodthirst",
+            "tags": [],
+            "type": "boon",
+            "typeName": "Boon"
+        },
+        {
+            "cat": "sustain",
+            "desc": "Out of combat, restore 3% health and mana every 5 sec (faster recovery between pulls).",
+            "icon": "Spell_Nature_Rejuvenation",
+            "id": 16,
+            "kind": "boon",
+            "name": "Second Wind",
+            "tags": [],
+            "type": "boon",
+            "typeName": "Boon"
+        },
+        {
+            "cat": "utility",
+            "desc": "+25% movement speed while out of combat.",
+            "icon": "Ability_Mount_JungleTiger",
+            "id": 18,
+            "kind": "boon",
+            "name": "Wayfarer",
+            "tags": [],
+            "type": "boon",
+            "typeName": "Boon"
+        },
+        {
+            "cat": "utility",
+            "desc": "Immune to falling, lava, drowning and fatigue damage.",
+            "icon": "Spell_Magic_FeatherFall",
+            "id": 19,
+            "kind": "boon",
+            "name": "Featherfall",
+            "tags": [],
+            "type": "boon",
+            "typeName": "Boon"
+        },
+        {
+            "cat": "pet",
+            "desc": "Your pets, totems and guardians deal 20% more damage.",
+            "icon": "Ability_Hunter_BeastCall",
+            "id": 23,
+            "kind": "boon",
+            "name": "Packleader",
+            "tags": [],
+            "type": "boon",
+            "typeName": "Boon"
+        },
+        {
+            "cat": "pet",
+            "desc": "Your pets take 20% less damage.",
+            "icon": "Ability_Hunter_MendPet",
+            "id": 24,
+            "kind": "boon",
+            "name": "Bonded Hide",
+            "tags": [],
+            "type": "boon",
+            "typeName": "Boon"
+        },
+        {
+            "cat": "resource",
+            "desc": "Each kill restores 8% of your maximum mana.",
+            "icon": "Spell_Nature_ManaRegenTotem",
+            "id": 25,
+            "kind": "boon",
+            "name": "Wellspring",
+            "tags": [],
+            "type": "boon",
+            "typeName": "Boon"
+        },
+        {
+            "cat": "utility",
+            "desc": "+30% movement speed.",
+            "icon": "Ability_Rogue_Sprint",
+            "id": 26,
+            "kind": "boon",
+            "name": "Speedy",
+            "tags": [],
+            "type": "boon",
+            "typeName": "Boon"
+        },
+        {
+            "cat": "defense",
+            "desc": "+100 resistance to one random magic school (Fire, Nature, Frost, Shadow or Arcane), rolled when you lock in.",
+            "icon": "Spell_Nature_ResistNature",
+            "id": 27,
+            "kind": "boon",
+            "name": "Resistant",
+            "noWildCard": true,
+            "tags": [],
+            "type": "boon",
+            "typeName": "Boon"
+        },
+        {
+            "cat": "offense",
+            "desc": "+30% damage and healing done (attack and spell power), but -50% attack and casting speed.",
+            "icon": "Ability_Warrior_StrengthOfArms",
+            "id": 28,
+            "kind": "boon",
+            "name": "Powerful",
+            "tags": [],
+            "type": "boon",
+            "typeName": "Boon"
+        },
+        {
+            "cat": "offense",
+            "desc": "Double attack and casting speed, but -30% damage and healing done (attack and spell power).",
+            "icon": "INV_Misc_PocketWatch_01",
+            "id": 29,
+            "kind": "boon",
+            "name": "Swift",
+            "tags": [],
+            "type": "boon",
+            "typeName": "Boon"
+        },
+        {
+            "cat": "dungeon",
+            "desc": "Each dungeon boss you help kill drops an extra uncommon or rare item for your level into your bags.",
+            "icon": "INV_Misc_Bag_08",
+            "id": 30,
+            "kind": "boon",
+            "name": "Plunderer",
+            "tags": [],
+            "type": "boon",
+            "typeName": "Boon"
+        },
+        {
+            "cat": "dungeon",
+            "desc": "+4% damage and healing done for each boss slain in the current dungeon (up to 5 bosses). Resets when you leave.",
+            "icon": "Spell_Nature_UnrelentingStorm",
+            "id": 31,
+            "kind": "boon",
+            "name": "Momentum",
+            "tags": [],
+            "type": "boon",
+            "typeName": "Boon"
+        },
+        {
+            "cat": "dungeon",
+            "desc": "Once per dungeon run, when you die you are brought back 3 sec later with 40% health.",
+            "icon": "Spell_Holy_Resurrection",
+            "id": 32,
+            "kind": "boon",
+            "name": "Second Chance",
+            "tags": [],
+            "type": "boon",
+            "typeName": "Boon"
+        },
+        {
+            "cat": "dungeon",
+            "desc": "After each dungeon boss kill: restore 20% health and mana and gain +40% movement speed for 20 sec.",
+            "icon": "Ability_Warrior_Victoryrush",
+            "id": 33,
+            "kind": "boon",
+            "name": "Victory Rush",
+            "tags": [],
+            "type": "boon",
+            "typeName": "Boon"
+        },
+        {
+            "cat": "utility",
+            "desc": "Cast and channel spells while moving. Teaches \"Comfortable Insoles\" while picked. Needs the Turoran client patch (turoran_cwm.dll); without it your client still stops the cast.",
+            "icon": "Ability_Kick",
+            "id": 34,
+            "kind": "boon",
+            "name": "Mobile Casting",
+            "noWildCard": true,
+            "requires": "mobileCast",
+            "tags": [],
+            "type": "boon",
+            "typeName": "Boon"
+        },
+        {
+            "cat": "dungeon",
+            "desc": "Inside dungeons you are always drunk, and while drunk there you have +25% dodge. Drinking water sobers you up (and drops the dodge) for 30 sec. Comes with 20 Refreshing Spring Water.",
+            "icon": "Ability_Rogue_Feint",
+            "id": 35,
+            "kind": "boon",
+            "name": "Drunken Brawler",
+            "noWildCard": true,
+            "tags": [],
+            "type": "boon",
+            "typeName": "Boon"
+        },
+        {
+            "cat": "wild",
+            "desc": "A random boon, re-rolled every time you enter a new dungeon instance.",
+            "icon": "INV_Misc_Dice_01",
+            "id": 151,
+            "kind": "boon",
+            "name": "Wild Card",
+            "tags": [],
+            "type": "wildcard",
+            "typeName": "Wild Card"
+        },
+        {
+            "cat": "wild",
+            "desc": "A random boon at 150% strength, revealed when you lock in. It never changes.",
+            "icon": "INV_Misc_Gift_01",
+            "id": 152,
+            "kind": "boon",
+            "name": "Mystery Relic",
+            "tags": [],
+            "type": "relic",
+            "typeName": "Relic"
+        }
+    ],
+    "curses": [
+        {
+            "cat": "offense",
+            "desc": "-10% damage dealt.",
+            "icon": "Spell_Shadow_CurseOfMannoroth",
+            "id": 1,
+            "kind": "curse",
+            "name": "Feeble",
+            "tags": [],
+            "type": "curse",
+            "typeName": "Curse"
+        },
+        {
+            "cat": "offense",
+            "desc": "-20% auto-attack damage.",
+            "icon": "Ability_Warrior_Disarm",
+            "id": 2,
+            "kind": "curse",
+            "name": "Blunted",
+            "tags": [],
+            "type": "curse",
+            "typeName": "Curse"
+        },
+        {
+            "cat": "offense",
+            "desc": "-15% spell and ability damage.",
+            "icon": "Spell_Shadow_CurseOfTounges",
+            "id": 3,
+            "kind": "curse",
+            "name": "Fizzle",
+            "tags": [],
+            "type": "curse",
+            "typeName": "Curse"
+        },
+        {
+            "cat": "offense",
+            "desc": "8% chance for any hit to deal half damage.",
+            "icon": "Ability_Rogue_Trip",
+            "id": 4,
+            "kind": "curse",
+            "name": "Fumble",
+            "tags": [],
+            "type": "curse",
+            "typeName": "Curse"
+        },
+        {
+            "cat": "offense",
+            "desc": "-15% damage to elites and bosses.",
+            "icon": "Spell_Shadow_Possession",
+            "id": 5,
+            "kind": "curse",
+            "name": "Cowed",
+            "tags": [],
+            "type": "curse",
+            "typeName": "Curse"
+        },
+        {
+            "cat": "defense",
+            "desc": "12% more damage taken.",
+            "icon": "Spell_Shadow_UnholyFrenzy",
+            "id": 6,
+            "kind": "curse",
+            "name": "Glass Bones",
+            "tags": [],
+            "type": "curse",
+            "typeName": "Curse"
+        },
+        {
+            "cat": "defense",
+            "desc": "30% more damage taken while below 35% health.",
+            "icon": "Ability_Warrior_Sunder",
+            "id": 7,
+            "kind": "curse",
+            "name": "Exposed",
+            "tags": [],
+            "type": "curse",
+            "typeName": "Curse"
+        },
+        {
+            "cat": "defense",
+            "desc": "-10% maximum health.",
+            "icon": "Spell_Shadow_CurseOfSargeras",
+            "id": 8,
+            "kind": "curse",
+            "name": "Frail",
+            "tags": [],
+            "type": "curse",
+            "typeName": "Curse"
+        },
+        {
+            "cat": "utility",
+            "desc": "Falling, lava, drowning and fatigue damage doubled.",
+            "icon": "Ability_Rogue_FeignDeath",
+            "id": 9,
+            "kind": "curse",
+            "name": "Clumsy",
+            "tags": [],
+            "type": "curse",
+            "typeName": "Curse"
+        },
+        {
+            "cat": "sustain",
+            "desc": "-15% healing done.",
+            "icon": "Spell_Holy_Restoration",
+            "id": 11,
+            "kind": "curse",
+            "name": "Shaky Hands",
+            "tags": [],
+            "type": "curse",
+            "typeName": "Curse"
+        },
+        {
+            "cat": "sustain",
+            "desc": "In combat, lose 2% of maximum health every 5 sec (never below 20%).",
+            "icon": "Ability_Rogue_Rupture",
+            "id": 12,
+            "kind": "curse",
+            "name": "Bleeding",
+            "tags": [],
+            "type": "curse",
+            "typeName": "Curse"
+        },
+        {
+            "cat": "utility",
+            "desc": "-10% movement speed.",
+            "icon": "Spell_Nature_Slow",
+            "id": 13,
+            "kind": "curse",
+            "name": "Leaden",
+            "tags": [],
+            "type": "curse",
+            "typeName": "Curse"
+        },
+        {
+            "cat": "pet",
+            "desc": "Your pets, totems and guardians deal 20% less damage.",
+            "icon": "Ability_Hunter_BeastSoothe",
+            "id": 17,
+            "kind": "curse",
+            "name": "Neglected Pack",
+            "tags": [],
+            "type": "curse",
+            "typeName": "Curse"
+        },
+        {
+            "cat": "pet",
+            "desc": "Your pets take 25% more damage.",
+            "icon": "Ability_Hunter_Pet_Turtle",
+            "id": 18,
+            "kind": "curse",
+            "name": "Thin-Skinned Pack",
+            "tags": [],
+            "type": "curse",
+            "typeName": "Curse"
+        },
+        {
+            "cat": "resource",
+            "desc": "Each kill drains 5% of your maximum mana.",
+            "icon": "Spell_Shadow_ManaBurn",
+            "id": 19,
+            "kind": "curse",
+            "name": "Drained",
+            "tags": [],
+            "type": "curse",
+            "typeName": "Curse"
+        },
+        {
+            "cat": "utility",
+            "desc": "Your gear loses durability 10x as fast (hits taken and deaths).",
+            "icon": "INV_Misc_Gear_08",
+            "id": 20,
+            "kind": "curse",
+            "name": "Rust",
+            "tags": [],
+            "type": "curse",
+            "typeName": "Curse"
+        },
+        {
+            "cat": "sustain",
+            "desc": "-50% healing received.",
+            "icon": "Ability_Warrior_SavageBlow",
+            "id": 21,
+            "kind": "curse",
+            "name": "Mortal Wounds",
+            "tags": [],
+            "type": "curse",
+            "typeName": "Curse"
+        },
+        {
+            "cat": "hazard",
+            "desc": "In combat, every 15 sec take 60 x your level Shadow damage (never below 10% health).",
+            "icon": "Spell_Shadow_RitualOfSacrifice",
+            "id": 22,
+            "kind": "curse",
+            "name": "Blood Curse",
+            "tags": [],
+            "type": "curse",
+            "typeName": "Curse"
+        },
+        {
+            "cat": "hazard",
+            "desc": "In combat, every 15 sec explode for 30 x your level Fire damage to yourself and party members within 10 yd (never below 10% health).",
+            "icon": "Ability_Mage_LivingBomb",
+            "id": 23,
+            "kind": "curse",
+            "name": "Living Bomb",
+            "tags": [],
+            "type": "curse",
+            "typeName": "Curse"
+        },
+        {
+            "cat": "offense",
+            "desc": "Every ability you use goes on a 3 sec cooldown (abilities with a longer cooldown keep theirs).",
+            "icon": "Spell_Shadow_MindTwisting",
+            "id": 24,
+            "kind": "curse",
+            "name": "ADHD",
+            "tags": [],
+            "type": "curse",
+            "typeName": "Curse"
+        },
+        {
+            "cat": "defense",
+            "desc": "-100 resistance to one random magic school, rolled when you lock in.",
+            "icon": "Spell_Shadow_ChillTouch",
+            "id": 25,
+            "kind": "curse",
+            "name": "Elemental Weakness",
+            "tags": [],
+            "type": "curse",
+            "typeName": "Curse"
+        },
+        {
+            "cat": "offense",
+            "desc": "You cannot equip melee weapons (bows, guns, crossbows, wands, thrown weapons and shields are fine). Equipped melee weapons go to your bags at lock-in.",
+            "icon": "INV_Gauntlets_04",
+            "id": 26,
+            "kind": "curse",
+            "name": "Unarmed",
+            "tags": [],
+            "type": "curse",
+            "typeName": "Curse"
+        },
+        {
+            "cat": "utility",
+            "desc": "Gain 15 gold at lock-in, then lose 1 gold every minute you are online. While you cannot pay, -50% movement speed.",
+            "icon": "INV_Misc_Coin_01",
+            "id": 27,
+            "kind": "curse",
+            "name": "Motivated by Greed",
+            "tags": [],
+            "type": "curse",
+            "typeName": "Curse"
+        },
+        {
+            "cat": "utility",
+            "desc": "You are permanently Drunk (drunk level 60), in dungeons and out. Drinking water sobers you up for 30 sec. Comes with 20 Refreshing Spring Water.",
+            "icon": "INV_Drink_04",
+            "id": 28,
+            "kind": "curse",
+            "name": "Drunkard",
+            "tags": [],
+            "type": "curse",
+            "typeName": "Curse"
+        },
+        {
+            "cat": "offense",
+            "desc": "Unless you are drunk: -20% damage dealt, healing done and maximum health. Comes with 20 Skins of Dwarven Stout.",
+            "icon": "INV_Drink_05",
+            "id": 29,
+            "kind": "curse",
+            "name": "Alcoholic",
+            "tags": [],
+            "type": "curse",
+            "typeName": "Curse"
+        },
+        {
+            "cat": "hazard",
+            "desc": "Each second within 5 yd of a party member or an enemy (pets and totems don't count), take 20 x your level Shadow damage (never below 10% health).",
+            "icon": "Spell_Shadow_PlagueCloud",
+            "id": 30,
+            "kind": "curse",
+            "name": "Germaphobic",
+            "tags": [],
+            "type": "curse",
+            "typeName": "Curse"
+        },
+        {
+            "cat": "utility",
+            "desc": "Inside dungeons you are always Tipsy (drunk level 35, the mildest tier). Drinking water sobers you up for 30 sec. Comes with 20 Refreshing Spring Water.",
+            "icon": "INV_Drink_03",
+            "id": 31,
+            "kind": "curse",
+            "name": "Tipsy",
+            "tags": [],
+            "type": "curse",
+            "typeName": "Curse"
+        },
+        {
+            "cat": "utility",
+            "desc": "Inside dungeons you are always Smashed (drunk level 100, the maximum). Drinking water sobers you up for 30 sec. Comes with 20 Refreshing Spring Water.",
+            "icon": "INV_Drink_08",
+            "id": 32,
+            "kind": "curse",
+            "name": "Smashed",
+            "tags": [],
+            "type": "curse",
+            "typeName": "Curse"
+        },
+        {
+            "cat": "hazard",
+            "desc": "Every 2 min an immortal snail appears 30 yd away and crawls after you at 1 yd/sec, forever. It cannot be attacked, slowed or stopped. If it touches you, you die. It follows you through zones and dungeons.",
+            "icon": "INV_Misc_Shell_03",
+            "id": 33,
+            "kind": "curse",
+            "name": "The Immortal Snail Problem",
+            "tags": [
+                "Lethal"
+            ],
+            "type": "curse",
+            "typeName": "Curse"
+        },
+        {
+            "cat": "dungeon",
+            "desc": "Enemies notice you from twice their normal aggro range.",
+            "icon": "Spell_Fire_Flare",
+            "id": 34,
+            "kind": "curse",
+            "name": "Conspicuous",
+            "tags": [],
+            "type": "curse",
+            "typeName": "Curse"
+        },
+        {
+            "cat": "offense",
+            "desc": "+20% damage dealt, but 20% more damage taken.",
+            "icon": "Spell_Shadow_DeathPact",
+            "id": 101,
+            "kind": "curse",
+            "name": "Pact of Glass",
+            "tags": [],
+            "type": "pact",
+            "typeName": "Pact"
+        },
+        {
+            "cat": "sustain",
+            "desc": "Heal for 8% of the damage you deal, but -40% healing received.",
+            "icon": "Spell_Shadow_BloodBoil",
+            "id": 102,
+            "kind": "curse",
+            "name": "Pact of Blood",
+            "tags": [],
+            "type": "pact",
+            "typeName": "Pact"
+        },
+        {
+            "cat": "offense",
+            "desc": "+25% auto-attack damage, but -20% spell and ability damage.",
+            "icon": "Ability_Warrior_InnerRage",
+            "id": 104,
+            "kind": "curse",
+            "name": "Pact of the Berserker",
+            "tags": [],
+            "type": "pact",
+            "typeName": "Pact"
+        },
+        {
+            "cat": "offense",
+            "desc": "+20% spell and ability damage, but -25% auto-attack damage.",
+            "icon": "Spell_Arcane_ArcaneTorrent",
+            "id": 105,
+            "kind": "curse",
+            "name": "Pact of the Arcanist",
+            "tags": [],
+            "type": "pact",
+            "typeName": "Pact"
+        },
+        {
+            "cat": "defense",
+            "desc": "15% less damage taken, but -12% movement speed.",
+            "icon": "Ability_Warrior_ShieldWall",
+            "id": 106,
+            "kind": "curse",
+            "name": "Pact of the Juggernaut",
+            "tags": [],
+            "type": "pact",
+            "typeName": "Pact"
+        },
+        {
+            "cat": "offense",
+            "desc": "-10% damage dealt until you slay 25 elites or bosses inside dungeons (no more than 5 levels below you), then +10% damage dealt.",
+            "goal": {
+                "kind": "elite",
+                "n": 25
+            },
+            "icon": "Ability_Warrior_Rampage",
+            "id": 151,
+            "kind": "curse",
+            "name": "Trial of Blood",
+            "tags": [],
+            "type": "trial",
+            "typeName": "Trial"
+        },
+        {
+            "cat": "defense",
+            "desc": "10% more damage taken until you help slay 5 dungeon bosses, then 10% less damage taken.",
+            "goal": {
+                "kind": "boss",
+                "n": 5
+            },
+            "icon": "Spell_Holy_DevotionAura",
+            "id": 153,
+            "kind": "curse",
+            "name": "Trial of Endurance",
+            "tags": [],
+            "type": "trial",
+            "typeName": "Trial"
+        },
+        {
+            "cat": "utility",
+            "desc": "-10% movement speed until you help slay 10 dungeon bosses, then +10% movement speed.",
+            "goal": {
+                "kind": "boss",
+                "n": 10
+            },
+            "icon": "Ability_Hunter_SniperShot",
+            "id": 155,
+            "kind": "curse",
+            "name": "Trial of the Delver",
+            "tags": [],
+            "type": "trial",
+            "typeName": "Trial"
+        },
+        {
+            "cat": "dungeon",
+            "desc": "Dungeon affix: non-boss enemies have +30% effective health and deal +20% damage.",
+            "icon": "INV_Shield_06",
+            "id": 201,
+            "kind": "curse",
+            "name": "Fortified",
+            "tags": [],
+            "type": "affix",
+            "typeName": "Dungeon Affix"
+        },
+        {
+            "cat": "dungeon",
+            "desc": "Dungeon affix: bosses have +30% effective health and deal +15% damage.",
+            "icon": "Spell_Shadow_DemonicTactics",
+            "id": 202,
+            "kind": "curse",
+            "name": "Tyrannical",
+            "tags": [],
+            "type": "affix",
+            "typeName": "Dungeon Affix"
+        },
+        {
+            "cat": "dungeon",
+            "desc": "Dungeon affix: when a non-boss enemy dies, enemies within 30 yd grow and gain +20% damage and effective health (stacks up to 10).",
+            "icon": "Spell_Holy_SealOfMight",
+            "id": 203,
+            "kind": "curse",
+            "name": "Bolstering",
+            "tags": [],
+            "type": "affix",
+            "typeName": "Dungeon Affix"
+        },
+        {
+            "cat": "dungeon",
+            "desc": "Dungeon affix: non-boss enemies below 30% health deal +50% damage.",
+            "icon": "Ability_Warrior_EndlessRage",
+            "id": 204,
+            "kind": "curse",
+            "name": "Raging",
+            "tags": [],
+            "type": "affix",
+            "typeName": "Dungeon Affix"
+        },
+        {
+            "cat": "dungeon",
+            "desc": "Dungeon affix: enemy melee hits stack Necrotic Wound (-3% healing received per stack, up to -90%); stacks clear 6 sec after the last hit.",
+            "icon": "Spell_Shadow_DeadofNight",
+            "id": 205,
+            "kind": "curse",
+            "name": "Necrotic",
+            "tags": [],
+            "type": "affix",
+            "typeName": "Dungeon Affix"
+        },
+        {
+            "cat": "dungeon",
+            "desc": "Dungeon affix: while below 90% health in combat, a Grievous Wound deals 1% max health per stack every 3 sec and gains a stack (up to 5); healing above 90% clears it.",
+            "icon": "Ability_Backstab",
+            "id": 206,
+            "kind": "curse",
+            "name": "Grievous",
+            "tags": [],
+            "type": "affix",
+            "typeName": "Dungeon Affix"
+        },
+        {
+            "cat": "dungeon",
+            "desc": "Dungeon affix: when a non-boss enemy dies, every player within 40 yd takes 3% of max health (pulls of many enemies add up).",
+            "icon": "Spell_Fire_SelfDestruct",
+            "id": 207,
+            "kind": "curse",
+            "name": "Bursting",
+            "tags": [],
+            "type": "affix",
+            "typeName": "Dungeon Affix"
+        },
+        {
+            "cat": "dungeon",
+            "desc": "Dungeon affix: every 20 sec in combat each player quakes: 6% max health damage, plus 6% for each other player within 8 yd, and casting is interrupted.",
+            "icon": "Spell_Nature_Earthquake",
+            "id": 208,
+            "kind": "curse",
+            "name": "Quaking",
+            "tags": [],
+            "type": "affix",
+            "typeName": "Dungeon Affix"
+        },
+        {
+            "cat": "dungeon",
+            "desc": "Dungeon affix: every 8 sec in combat a fire ring (3 yd) marks a plume under a player; 3 sec later everyone still inside takes 15% max health damage and is knocked about 5 feet up.",
+            "icon": "Spell_Fire_Volcano",
+            "id": 209,
+            "kind": "curse",
+            "name": "Volcanic",
+            "tags": [],
+            "type": "affix",
+            "typeName": "Dungeon Affix"
+        }
+    ],
+    "dials": {
+        "curseFloorPct": 10,
+        "offers": 3,
+        "rerollsBase": 1,
+        "rerollsPerCurse": 1,
+        "slotsMax": 8
+    },
+    "dungeons": [
+        {
+            "expansion": 0,
+            "max": 21,
+            "min": 15,
+            "name": "Ragefire Chasm"
+        },
+        {
+            "expansion": 0,
+            "max": 25,
+            "min": 15,
+            "name": "Deadmines"
+        },
+        {
+            "expansion": 0,
+            "max": 25,
+            "min": 15,
+            "name": "Wailing Caverns"
+        },
+        {
+            "expansion": 0,
+            "max": 26,
+            "min": 16,
+            "name": "Shadowfang Keep"
+        },
+        {
+            "expansion": 0,
+            "max": 29,
+            "min": 19,
+            "name": "Blackfathom Deeps"
+        },
+        {
+            "expansion": 0,
+            "max": 30,
+            "min": 20,
+            "name": "Stormwind Stockade"
+        },
+        {
+            "expansion": 0,
+            "max": 32,
+            "min": 22,
+            "name": "Razorfen Kraul"
+        },
+        {
+            "expansion": 0,
+            "max": 33,
+            "min": 23,
+            "name": "Gnomeregan"
+        },
+        {
+            "expansion": 0,
+            "max": 37,
+            "min": 27,
+            "name": "Scarlet Monastery - Graveyard"
+        },
+        {
+            "expansion": 0,
+            "max": 40,
+            "min": 30,
+            "name": "Scarlet Monastery - Library"
+        },
+        {
+            "expansion": 0,
+            "max": 42,
+            "min": 32,
+            "name": "Razorfen Downs"
+        },
+        {
+            "expansion": 0,
+            "max": 42,
+            "min": 32,
+            "name": "Scarlet Monastery - Armory"
+        },
+        {
+            "expansion": 0,
+            "max": 45,
+            "min": 35,
+            "name": "Scarlet Monastery - Cathedral"
+        },
+        {
+            "expansion": 0,
+            "max": 45,
+            "min": 35,
+            "name": "Uldaman"
+        },
+        {
+            "expansion": 0,
+            "max": 49,
+            "min": 39,
+            "name": "Maraudon - Purple Crystals"
+        },
+        {
+            "expansion": 0,
+            "max": 51,
+            "min": 41,
+            "name": "Maraudon - Orange Crystals"
+        },
+        {
+            "expansion": 0,
+            "max": 51,
+            "min": 41,
+            "name": "Zul'Farrak"
+        },
+        {
+            "expansion": 0,
+            "max": 53,
+            "min": 43,
+            "name": "Maraudon - Pristine Waters"
+        },
+        {
+            "expansion": 0,
+            "max": 55,
+            "min": 45,
+            "name": "Sunken Temple"
+        },
+        {
+            "expansion": 0,
+            "max": 57,
+            "min": 47,
+            "name": "Blackrock Depths - Prison"
+        },
+        {
+            "expansion": 0,
+            "max": 61,
+            "min": 51,
+            "name": "Blackrock Depths - Upper City"
+        },
+        {
+            "expansion": 0,
+            "max": 63,
+            "min": 53,
+            "name": "Dire Maul - East"
+        },
+        {
+            "expansion": 0,
+            "max": 65,
+            "min": 55,
+            "name": "Dire Maul - North"
+        },
+        {
+            "expansion": 0,
+            "max": 65,
+            "min": 55,
+            "name": "Dire Maul - West"
+        },
+        {
+            "expansion": 0,
+            "max": 65,
+            "min": 55,
+            "name": "Lower Blackrock Spire"
+        },
+        {
+            "expansion": 0,
+            "max": 65,
+            "min": 55,
+            "name": "Scholomance"
+        },
+        {
+            "expansion": 0,
+            "max": 65,
+            "min": 55,
+            "name": "Stratholme - Main Gate"
+        },
+        {
+            "expansion": 0,
+            "max": 65,
+            "min": 55,
+            "name": "Stratholme - Service Entrance"
+        },
+        {
+            "expansion": 1,
+            "max": 67,
+            "min": 57,
+            "name": "Hellfire Ramparts"
+        },
+        {
+            "expansion": 1,
+            "max": 68,
+            "min": 59,
+            "name": "Blood Furnace"
+        },
+        {
+            "expansion": 1,
+            "max": 69,
+            "min": 60,
+            "name": "Slave Pens"
+        },
+        {
+            "expansion": 1,
+            "max": 70,
+            "min": 61,
+            "name": "Underbog"
+        },
+        {
+            "expansion": 1,
+            "max": 71,
+            "min": 62,
+            "name": "Mana-Tombs"
+        },
+        {
+            "expansion": 1,
+            "max": 72,
+            "min": 63,
+            "name": "Auchenai Crypts"
+        },
+        {
+            "expansion": 1,
+            "max": 73,
+            "min": 64,
+            "name": "The Escape From Durnholde"
+        },
+        {
+            "expansion": 1,
+            "max": 73,
+            "min": 65,
+            "name": "Sethekk Halls"
+        },
+        {
+            "expansion": 1,
+            "max": 75,
+            "min": 67,
+            "name": "Shadow Labyrinth"
+        },
+        {
+            "expansion": 1,
+            "max": 75,
+            "min": 67,
+            "name": "Shattered Halls"
+        },
+        {
+            "expansion": 1,
+            "max": 75,
+            "min": 67,
+            "name": "The Botanica"
+        },
+        {
+            "expansion": 1,
+            "max": 75,
+            "min": 67,
+            "name": "The Mechanar"
+        },
+        {
+            "expansion": 1,
+            "max": 75,
+            "min": 67,
+            "name": "The Steamvault"
+        },
+        {
+            "expansion": 1,
+            "max": 75,
+            "min": 68,
+            "name": "Magisters' Terrace"
+        },
+        {
+            "expansion": 1,
+            "max": 75,
+            "min": 68,
+            "name": "The Arcatraz"
+        },
+        {
+            "expansion": 1,
+            "max": 75,
+            "min": 68,
+            "name": "The Black Morass"
+        },
+        {
+            "expansion": 2,
+            "max": 80,
+            "min": 68,
+            "name": "Utgarde Keep"
+        },
+        {
+            "expansion": 2,
+            "max": 80,
+            "min": 69,
+            "name": "The Nexus"
+        },
+        {
+            "expansion": 2,
+            "max": 80,
+            "min": 70,
+            "name": "Azjol-Nerub"
+        },
+        {
+            "expansion": 2,
+            "max": 80,
+            "min": 71,
+            "name": "Ahn'kahet: The Old Kingdom"
+        },
+        {
+            "expansion": 2,
+            "max": 80,
+            "min": 72,
+            "name": "Drak'Tharon Keep"
+        },
+        {
+            "expansion": 2,
+            "max": 80,
+            "min": 73,
+            "name": "Violet Hold"
+        },
+        {
+            "expansion": 2,
+            "max": 80,
+            "min": 74,
+            "name": "Gundrak"
+        },
+        {
+            "expansion": 2,
+            "max": 80,
+            "min": 75,
+            "name": "Halls of Stone"
+        },
+        {
+            "expansion": 2,
+            "max": 80,
+            "min": 77,
+            "name": "Halls of Lightning"
+        },
+        {
+            "expansion": 2,
+            "max": 80,
+            "min": 77,
+            "name": "The Culling of Stratholme"
+        },
+        {
+            "expansion": 2,
+            "max": 80,
+            "min": 77,
+            "name": "The Oculus"
+        },
+        {
+            "expansion": 2,
+            "max": 80,
+            "min": 77,
+            "name": "Utgarde Pinnacle"
+        },
+        {
+            "expansion": 0,
+            "max": 82,
+            "min": 78,
+            "name": "Coren Direbrew"
+        },
+        {
+            "expansion": 0,
+            "max": 82,
+            "min": 78,
+            "name": "The Crown Chemical Co."
+        },
+        {
+            "expansion": 1,
+            "max": 82,
+            "min": 78,
+            "name": "The Frost Lord Ahune"
+        },
+        {
+            "expansion": 0,
+            "max": 82,
+            "min": 78,
+            "name": "The Headless Horseman"
+        },
+        {
+            "expansion": 2,
+            "max": 80,
+            "min": 80,
+            "name": "Halls of Reflection"
+        },
+        {
+            "expansion": 2,
+            "max": 80,
+            "min": 80,
+            "name": "Pit of Saron"
+        },
+        {
+            "expansion": 2,
+            "max": 80,
+            "min": 80,
+            "name": "The Forge of Souls"
+        },
+        {
+            "expansion": 2,
+            "max": 80,
+            "min": 80,
+            "name": "Trial of the Champion"
+        }
+    ],
+    "source": {
+        "branch": "feature/gauntlet-hero",
+        "commit": "7d5ca81",
+        "file": "lua_scripts/Gauntlet/GauntletBoons.lua",
+        "repo": "Turor/mod-turoran-roguelike"
+    }
+}

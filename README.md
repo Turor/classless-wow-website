@@ -38,3 +38,20 @@ Run with a local `application.yml` and required services (MySQL and/or SQLite, G
 ## Deploy notes
 
 Deploy as a normal Spring Boot service behind your preferred reverse proxy / TLS terminator. Keep production `application.yml`, keystores, and `recovery.db` on the host only — outside this repository.
+
+## Roguelike info page
+
+`/roguelike` is a public page (no gate password) describing the Roguelike Gauntlet realm: design, character
+creation, realm rules and every boon and curse. Static files live in `src/main/resources/static/roguelike/`;
+the boon/curse list, draft dials and dungeon list come from `catalog.json`, generated from the real Gauntlet Lua
+in `Turor/mod-turoran-roguelike` (`feature/gauntlet-hero`):
+
+```bash
+tools/roguelike/refresh.sh                 # clones/pulls the mod into tools/roguelike/.cache
+tools/roguelike/refresh.sh ~/path/to/mod-turoran-roguelike   # or use an existing checkout
+```
+
+It loads `GauntletBoons.lua` / `GauntletData.lua` under no-op stubs (`tools/roguelike/export_catalog.lua`, needs
+lua5.1, luajit or lua5.4), writes `catalog.json` and downloads any missing icon from Wowhead's icon CDN into
+`roguelike/icons/`. Commit the result and redeploy. The prose sections (creation, rules, core kit) are hand-written
+in `roguelike/index.html`.

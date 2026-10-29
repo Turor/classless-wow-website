@@ -1,0 +1,68 @@
+/* Roguelike info page: extends the site's light card style (stylesheet.css). */
+body.rl { align-items: flex-start; }
+.rl .container.rl-page { max-width: 1000px; margin: 12px 0 24px; }
+.rl-nav { display: flex; flex-wrap: wrap; border-bottom: 1px solid #d0d0d0; background: #fafafa; }
+.rl-nav a { flex: 1 1 auto; padding: 8px 10px; font-size: 13px; text-align: center; color: inherit;
+    text-decoration: none; border-right: 1px solid #d0d0d0; }
+.rl-nav a:last-child { border-right: none; }
+.rl-nav a:hover { background: #f0f0f0; }
+.rl-nav a.home { background: #0078D7; color: #fff; }
+.rl-nav a.home:hover { background: #0066b8; }
+.rl .subtitle { text-align: center; color: #555; margin: -4px 12px 12px; font-size: 14px; }
+.rl section { padding: 14px 18px 6px; border-top: 1px solid #ececec; }
+.rl section:first-of-type { border-top: none; }
+.rl h2 { margin: 0 0 10px; font-size: 1.15rem; color: #333; }
+.rl h3 { margin: 14px 0 6px; font-size: 1rem; color: #333; }
+.rl p, .rl li { font-size: 14px; line-height: 1.5; color: #333; }
+.rl p { margin: 0 0 8px; }
+.rl ul, .rl ol { margin: 0.3rem 0 0.8rem 1.25rem; padding: 0; }
+.rl code { background: #f2f2f5; padding: 1px 4px; border-radius: 3px; font-size: 13px; }
+.rl a { color: #0b57d0; }
+.rl table.rl-table { border-collapse: collapse; width: 100%; margin: 4px 0 10px; font-size: 13px; }
+.rl table.rl-table th, .rl table.rl-table td { border-bottom: 1px solid #ececec; padding: 5px 8px; text-align: left;
+    width: auto; white-space: normal; vertical-align: top; }
+.rl table.rl-table th { background: #fafafa; font-weight: bold; color: #333; }
+.rl .note { border: 1px solid #b6d4f2; background: #eef6fd; padding: 8px 10px; border-radius: 4px; font-size: 13px;
+    margin: 6px 0 10px; }
+.rl .warn { border: 1px dashed #c9a227; background: #fff8e1; padding: 8px 10px; border-radius: 4px; font-size: 13px;
+    margin: 6px 0 10px; }
+.rl .steps { counter-reset: step; list-style: none; margin-left: 0; }
+.rl .steps li { position: relative; padding-left: 34px; margin-bottom: 8px; }
+.rl .steps li::before { counter-increment: step; content: counter(step); position: absolute; left: 0; top: 1px;
+    width: 22px; height: 22px; border-radius: 50%; background: #0078D7; color: #fff; font-size: 12px;
+    text-align: center; line-height: 22px; font-weight: bold; }
+.rl .sliders { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 8px 0 12px; }
+.rl .slider-card { border: 1px solid #d0d0d0; border-radius: 6px; padding: 10px 12px; background: #fcfcfd; }
+.rl .slider-card h3 { margin-top: 0; }
+.rl .slider-card input[type=range] { width: 100%; padding: 0; border: none; }
+.rl .slider-card .val { font-weight: bold; }
+.rl .boon-accent { border-left: 4px solid #2e9d57; }
+.rl .curse-accent { border-left: 4px solid #b3261e; }
+.rl .toolbar { display: flex; gap: 8px; align-items: center; margin: 4px 0 10px; flex-wrap: wrap; }
+.rl .toolbar input { max-width: 320px; }
+.rl .toolbar .count { font-size: 13px; color: #666; }
+.rl .group-title { margin: 14px 0 6px; font-size: 0.95rem; color: #444; text-transform: none; }
+.rl .group-title small { color: #777; font-weight: normal; }
+.rl .cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(290px, 1fr)); gap: 8px; margin-bottom: 8px; }
+.rl .card { display: flex; gap: 10px; border: 1px solid #e0e0e0; border-radius: 6px; padding: 8px 10px; background: #fff; }
+.rl .card.boon { border-left: 4px solid #2e9d57; }
+.rl .card.curse { border-left: 4px solid #b3261e; }
+.rl .card img { width: 40px; height: 40px; border-radius: 4px; border: 1px solid #222; flex-shrink: 0; }
+.rl .card .name { font-weight: bold; font-size: 14px; color: #222; }
+.rl .card .desc { font-size: 13px; color: #444; line-height: 1.4; margin-top: 2px; }
+.rl .badge { display: inline-block; font-size: 11px; padding: 1px 6px; border-radius: 9px; margin-left: 4px;
+    background: #eee; color: #444; vertical-align: 1px; font-weight: normal; }
+.rl .badge.lethal { background: #b3261e; color: #fff; }
+.rl .badge.affix { background: #6b3fa0; color: #fff; }
+.rl .badge.pact { background: #8a5a00; color: #fff; }
+.rl .badge.trial { background: #a33; color: #fff; }
+.rl .badge.wild { background: #0078D7; color: #fff; }
+.rl .badge.muted { background: #f0f0f0; color: #666; }
+.rl .muted { color: #777; font-size: 12px; }
+.rl footer { padding: 12px 18px 16px; border-top: 1px solid #ececec; font-size: 12px; color: #666; line-height: 1.5; }
+.rl .dungeon-grid { columns: 3 230px; column-gap: 18px; font-size: 13px; margin: 4px 0 10px; }
+.rl .dungeon-grid div { break-inside: avoid; padding: 2px 0; border-bottom: 1px dotted #e4e4e4; display: flex;
+    justify-content: space-between; gap: 8px; }
+.rl .dungeon-grid .lv { color: #666; white-space: nowrap; }
+.rl .exp { font-weight: bold; margin: 8px 0 2px; font-size: 13px; color: #444; column-span: all; }
+@media (max-width: 640px) { .rl .sliders { grid-template-columns: 1fr; } }

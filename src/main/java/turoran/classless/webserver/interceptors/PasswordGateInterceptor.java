@@ -14,6 +14,11 @@ public class PasswordGateInterceptor implements HandlerInterceptor {
     private final Set<String> unblockedList = Set.of("/index.html", "/", "/login", "/error","/components/login.html", "/stylesheet.css",
             "/files/presign/header", "/files/presign/download","/health");
 
+    /** The Roguelike info page and its assets are public: design notes only, no account data. */
+    static boolean isPublicInfoPage(String uri) {
+        return uri.equals("/roguelike") || (uri.startsWith("/roguelike/") && !uri.contains(".."));
+    }
+
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler)
             throws Exception {
@@ -21,7 +26,7 @@ public class PasswordGateInterceptor implements HandlerInterceptor {
         // Allow access to login page and static resources
         String uri = request.getRequestURI();
         log.info("Request Received for  URI: {} {}", uri, request.getSession().getAttribute("authenticated"));
-        if (unblockedList.contains(uri)) {
+        if (unblockedList.contains(uri) || isPublicInfoPage(uri)) {
             log.info("Allow access to login page and static resources");
             return true;
         }

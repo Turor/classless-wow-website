@@ -5,6 +5,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
+import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import turoran.classless.webserver.interceptors.PasswordGateInterceptor;
 import turoran.classless.webserver.interceptors.ResponseLoggingInterceptor;
@@ -20,5 +21,11 @@ public class WebConfig implements WebMvcConfigurer {
     public void addInterceptors(InterceptorRegistry registry) {
         registry.addInterceptor(gate);
         registry.addInterceptor(logging);
+    }
+
+    @Override
+    public void addViewControllers(ViewControllerRegistry registry) {
+        registry.addViewController("/roguelike").setViewName("forward:/roguelike/index.html");
+        registry.addViewController("/roguelike/").setViewName("forward:/roguelike/index.html");
     }
 }

@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roguelike Gauntlet - Turoran's Classless WoW</title>
+    <link rel="stylesheet" href="/stylesheet.css">
+    <link rel="stylesheet" href="/roguelike/roguelike.css">
+</head>
+<body class="rl">
+<div class="container rl-page">
+    <nav class="rl-nav">
+        <a class="home" href="/">&larr; Accounts &amp; Downloads</a>
+        <a href="#overview">Overview</a>
+        <a href="#creation">Character Creation</a>
+        <a href="#rules">Realm Rules</a>
+        <a href="#draft">Boons &amp; Curses Draft</a>
+        <a href="#boons">Boons</a>
+        <a href="#curses">Curses</a>
+    </nav>
+    <h1 class="title">Roguelike Gauntlet</h1>
+    <p class="subtitle">How the Roguelike realm works, and every boon and curse you can draft.</p>
+
+    <section id="overview">
+        <h2>Overview</h2>
+        <p>
+            <strong>Roguelike Gauntlet</strong> is the Classless realm built around <strong>dungeon challenges, not
+            levelling</strong>. You make a <strong>Hero</strong>, pick the level you want to play at, and draft a build
+            from the classes the server offers you: abilities, talents, glyphs and gear. Then you take on dungeons with
+            the <strong>boons</strong> and <strong>curses</strong> you drafted.
+        </p>
+        <ul>
+            <li><strong>Hero class:</strong> a Hero has no fixed class. It plays with whatever its draft gives it, and
+                the Classless UI only shows a Hero the classes, spells and talent trees it drafted.</li>
+            <li><strong>Server-owned randomness:</strong> every offer (classes, abilities, boon and curse rows) is
+                rolled by the server and saved. Relogging shows you the same offers, so you can't reroll by
+                reconnecting.</li>
+            <li><strong>Cross-faction:</strong> Alliance and Horde can group, trade and run dungeons together.</li>
+            <li><strong>Curses are about dungeons:</strong> most curses add hazards or make enemies stronger, much like
+                Mythic+ affixes. Boons make you stronger in dungeons. There are no XP, gold or loot-economy picks.</li>
+            <li>The realm shares accounts with every other Classless realm. Pick <em>Roguelike Gauntlet</em> from the
+                realm list.</li>
+        </ul>
+    </section>
+
+    <section id="creation">
+        <h2>Character creation</h2>
+        <p>Create a <strong>Hero</strong>. When you first log in, the Gauntlet window opens. It's an 8-step wizard,
+            and it keeps reopening until you lock in a build (<code>/gauntlet</code> opens it too).</p>
+        <ol class="steps">
+            <li><strong>Classes:</strong> choose how many classes to draft (1&ndash;5, default 3). Each pick is a row of
+                3 classes, and you keep one per row. You get 3 re-rolls, shared with the ability draft.</li>
+            <li><strong>Level:</strong> pick any starting level that falls inside at least one dungeon's level range
+                (the lowest is 15, Ragefire Chasm). The full list is below.</li>
+            <li><strong>Abilities:</strong> for each ability slot you're offered 3 whole spells from your drafted classes
+                and keep 1 (pick 3, keep 1). You get every rank up to your level. Spells that come from talents are
+                never offered (take the talent instead), and each class's core kit is free (see below).</li>
+            <li><strong>Talents:</strong> spend your talent points in the trees of your drafted classes. Classic tree
+                rules apply: tier N needs N&times;5 points in that tree, and prerequisites must be maxed.</li>
+            <li><strong>Glyphs:</strong> choose glyphs from your drafted classes. Slots open with level like a normal
+                character: 15 = 1 major + 1 minor, 30 = 2+1, 50 = 2+2, 70 = 2+3, 80 = 3+3.</li>
+            <li><strong>Gear:</strong> automatic gear for a role (strength, agility, intellect or tank) up to an item
+                level you choose, plus class weapon kits in your bags. See <a href="#rules">Realm Rules</a>.</li>
+            <li><strong>Boons &amp; Curses:</strong> two independent sliders and one pick per row. See
+                <a href="#draft">the draft</a>.</li>
+            <li><strong>Review:</strong> check everything and lock in. The server checks the whole build again and
+                applies it: level, spells, talents, gear, boons and curses, core kit and glyphs.</li>
+        </ol>
+
+        <h3>Free core kit per drafted class</h3>
+        <p>Each drafted class brings its core abilities for free, at the highest rank for your level. They never take
+            up a draft slot.</p>
+        <table class="rl-table">
+            <thead><tr><th>Class</th><th>Free core kit</th></tr></thead>
+            <tbody>
+            <tr><td>Warrior</td><td>Battle, Defensive and Berserker Stance</td></tr>
+            <tr><td>Paladin</td><td>Judgement of Light / Wisdom / Justice, Righteous Fury (draft a seal to judge)</td></tr>
+            <tr><td>Hunter</td><td>Auto Shot and the whole Pet bundle (Tame Beast, Call/Dismiss/Revive/Mend/Feed Pet, Beast Lore, Eyes of the Beast, Call Stabled Pet, Kill Command, Master's Call), plus the pet talent trees</td></tr>
+            <tr><td>Rogue</td><td>Stealth</td></tr>
+            <tr><td>Death Knight</td><td>Blood, Frost and Unholy Presence, Icy Touch, Plague Strike (Death Knight spells start at level 55)</td></tr>
+            <tr><td>Shaman</td><td>Call of the Elements / Ancestors / Spirits, Totemic Recall, plus the Earth, Fire, Water and Air totems</td></tr>
+            <tr><td>Warlock</td><td>Create Soul Shard</td></tr>
+            <tr><td>Druid</td><td>Bear Form, Dire Bear Form, Cat Form</td></tr>
+            <tr><td>Priest, Mage</td><td>None</td></tr>
+            </tbody>
+        </table>
+        <p class="muted">Basic attacks and heals (Fireball, Smite, Sinister Strike, Heroic Strike, Lightning Bolt, Holy
+            Light and the like) are draft-only. Heroes no longer learn class starter spells automatically.</p>
+
+        <h3>Dungeons and their level ranges</h3>
+        <div id="dungeons" class="dungeon-grid"><div>Loading&hellip;</div></div>
+    </section>
+
+    <section id="rules">
+        <h2>Realm rules</h2>
+        <ul>
+            <li><strong>Rest replaces food and drink.</strong> Every character knows <em>Rest</em>. Cast it out of
+                combat to sit down and regain 10% health and mana every second for 10 seconds. Standing up, moving or
+                entering combat ends it. Water still matters for the drunk curses and boons (vendors sell it).</li>
+            <li><strong>Hero mana regeneration</strong> is 50% above the normal baseline (1.5&times;).</li>
+            <li><strong>Gear:</strong> automatic gear is never PvP gear (no resilience, no arena or honor items).
+                Tanks get plate (mail below level 40) and a shield. Class kits go into your bags: Rogue 2 daggers;
+                Warrior and Paladin a two-hander, a one-hander and a shield; Hunter a bow or gun; Shaman a two-hander
+                and two different one-handers. Strength, agility and tank builds get a bow or gun, and intellect builds
+                get a wand.</li>
+            <li><strong>Ammo:</strong> every Hero gets 1000 arrows and 1000 bullets close to their level, plus a quiver
+                and ammo pouch. <strong>Ammo is unlimited</strong>, so the stack never runs out.</li>
+            <li><strong>Death Knight runes</strong> refill properly for Heroes, and Heroes get the combo point frame.</li>
+            <li><strong>Tracker window:</strong> a small window you can drag lists your active boons, curses, pacts,
+                trials and the dungeon affixes active where you are. Hover a line for details; <code>-</code>/<code>+</code>
+                collapses it. <code>/gauntlet hide</code> toggles it, <code>/gauntlet reset ui</code> moves it back, and
+                <code>/gauntlet</code> opens the full list.</li>
+        </ul>
+        <div class="note">
+            <strong>Mobile Casting needs the current launcher.</strong> The <em>Mobile Casting</em> boon lets you cast
+            and channel while moving. The server allows it, but your game client also has to. The current Windows and
+            Linux launchers (download them from the <a href="/">main page</a>) build and start a patched
+            <code>Wow_cwm.exe</code> next to <code>Wow.exe</code>. If you start the stock <code>Wow.exe</code>, the boon
+            still works on the server, but your client stops the cast. On Linux and Steam, point the shortcut at the
+            launcher (<code>launch-classless.sh --sync</code>, which now updates itself) or run
+            <code>steam/install-steam-shortcut.sh</code>. The macOS launcher doesn't support it.
+            A working install writes <code>cwm.log</code> saying &ldquo;installed 4/4 hooks&rdquo;.
+        </div>
+    </section>
+
+    <section id="draft">
+        <h2>The Boons &amp; Curses draft</h2>
+        <p>Step 7 of creation has <strong>two independent sliders</strong>. Each one goes from 0 to
+            <span class="js-slots">8</span>, and each step on a slider adds one row of <span class="js-offers">3</span>
+            server-rolled cards. You keep one card per row. All boons and no curses is allowed, so is all curses and
+            no boons, and so is none of either.</p>
+        <div class="sliders">
+            <div class="slider-card boon-accent">
+                <h3>Boons: <span class="val" id="boon-val">3</span></h3>
+                <input type="range" id="boon-slider" min="0" max="8" value="3" aria-label="Boons slider demo">
+                <p class="muted" id="boon-text"></p>
+            </div>
+            <div class="slider-card curse-accent">
+                <h3>Curses: <span class="val" id="curse-val">2</span></h3>
+                <input type="range" id="curse-slider" min="0" max="8" value="2" aria-label="Curses slider demo">
+                <p class="muted" id="curse-text"></p>
+            </div>
+        </div>
+        <ul>
+            <li><strong>Re-rolls:</strong> you get <span class="js-rr-base">1</span> free row re-roll, plus
+                <span class="js-rr-curse">1</span> more for every curse-row pick. Pacts, Trials and Dungeon Affixes
+                come from curse rows, so they use the Curses slider and earn re-rolls.</li>
+            <li><strong>Conflicts:</strong> two picks clash when they push the same thing in opposite directions (Swift
+                vs Powerful, Speedy vs Leaden, Blessed vs Mortal Wounds). Clashing cards are dimmed. Picks that push the
+                same way stack, up to a cap.</li>
+            <li><strong>Damage floors:</strong> curse damage (Blood Curse, Living Bomb, Germaphobic) never takes you
+                below <span class="js-floor">10</span>% health, and affix damage never kills you.
+                <strong>The Immortal Snail Problem is the one exception: it kills on contact.</strong></li>
+            <li><strong>Dungeon affixes are shared:</strong> a dungeon gets the affix curses of every Hero inside it,
+                and each affix counts once even if two Heroes picked it. They apply to everyone in that instance,
+                including other players and bots.</li>
+            <li><strong>Area warnings:</strong> area curses and affixes draw a ring on the ground at their real damage
+                radius before they go off: Volcanic 3 yd, Quaking 8 yd, Living Bomb 10 yd.</li>
+            <li><strong>Visuals:</strong> curses show on your character (and affixes on enemies). Boons have no glow.</li>
+        </ul>
+        <h3>Card types</h3>
+        <table class="rl-table">
+            <thead><tr><th>Type</th><th>Slider</th><th>What it does</th></tr></thead>
+            <tbody>
+            <tr><td><span class="badge muted">Boon</span></td><td>Boons</td><td>A plain upside.</td></tr>
+            <tr><td><span class="badge wild">Wild Card</span></td><td>Boons</td><td>A random boon that never clashes with your picks, re-rolled each time you enter a new dungeon instance.</td></tr>
+            <tr><td><span class="badge wild">Relic</span></td><td>Boons</td><td>Mystery Relic: a random boon at 150% strength, revealed at lock-in and fixed after that.</td></tr>
+            <tr><td><span class="badge muted">Curse</span></td><td>Curses</td><td>A plain downside or hazard.</td></tr>
+            <tr><td><span class="badge pact">Pact</span></td><td>Curses</td><td>A strong boon tied to a curse.</td></tr>
+            <tr><td><span class="badge trial">Trial</span></td><td>Curses</td><td>A curse until you reach a dungeon goal, then the matching boon for good. Group members in the same instance within 100 yd get credit.</td></tr>
+            <tr><td><span class="badge affix">Dungeon Affix</span></td><td>Curses</td><td>A Mythic+-style affix on every enemy in any dungeon you're in.</td></tr>
+            </tbody>
+        </table>
+    </section>
+
+    <section id="boons">
+        <h2>Boons <span class="badge muted" id="boon-count"></span></h2>
+        <div class="toolbar"><input type="search" id="boon-filter" placeholder="Filter boons&hellip;" aria-label="Filter boons"></div>
+        <div id="boon-groups"><p>Loading&hellip;</p></div>
+    </section>
+
+    <section id="curses">
+        <h2>Curses <span class="badge muted" id="curse-count"></span></h2>
+        <div class="toolbar"><input type="search" id="curse-filter" placeholder="Filter curses&hellip;" aria-label="Filter curses"></div>
+        <div id="curse-groups"><p>Loading&hellip;</p></div>
+    </section>
+
+    <footer>
+        <div id="source-line">Boon and curse data is generated from the realm's Gauntlet scripts.</div>
+        <div><strong>Credits:</strong> spell and item icons are World of Warcraft artwork &copy; Blizzard Entertainment,
+            fetched from <a href="https://www.wowhead.com/" target="_blank" rel="noopener noreferrer">Wowhead</a>'s
+            public icon CDN (zamimg.com). World of Warcraft is a trademark of Blizzard Entertainment. Dungeon affixes
+            are modelled on Blizzard's Mythic+ affixes. Server: AzerothCore with ALE (Eluna) and Rochet2's AIO.
+            Cast-while-moving client patch: Turoran <code>turoran_cwm.dll</code>.</div>
+    </footer>
+</div>
+<script src="/roguelike/roguelike.js"></script>
+</body>
+</html>
