@@ -1296,7 +1296,7 @@
     ],
     "source": {
         "branch": "feature/gauntlet-hero",
-        "commit": "7d5ca81",
+        "commit": "b93a880",
         "file": "lua_scripts/Gauntlet/GauntletBoons.lua",
         "repo": "Turor/mod-turoran-roguelike"
     }
