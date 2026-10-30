@@ -65,7 +65,7 @@
                 level you choose, plus class weapon kits in your bags. See <a href="#rules">Realm Rules</a>.</li>
             <li><strong>Boons &amp; Curses:</strong> two independent sliders and one pick per row, plus optional
                 <strong>Boss Rolls</strong> (a pick-1-of-3 draft after each dungeon boss) and <strong>Ramping</strong>
-                (+5% enemy health and damage per dungeon clear) checkboxes, both off by default. See <a href="#draft">the draft</a>.</li>
+                (tougher enemies per dungeon clear) checkboxes, both off by default. See <a href="#draft">the draft</a>.</li>
             <li><strong>Review:</strong> check everything and lock in. The server checks the whole build again and
                 applies it: level, spells, talents, gear, boons and curses, core kit and glyphs.</li>
         </ol>
@@ -192,14 +192,17 @@
                 and show one at a time, and they wait across logouts. What you pick is announced with a raid warning and a
                 chat line and shows up in your Boons &amp; Curses window right away. Off unless you tick it.</li>
             <li><strong>Ramping (optional, harder):</strong> tick the Ramping box in step 7 and every 5-player dungeon
-                you clear (its final boss dies while you're inside) makes the next ones tougher: enemies get
-                <strong>+5% health and damage per clear</strong>, added up (7 clears = +35%). Each run counts once per
+                you clear (its final boss dies while you're inside) makes the next ones tougher: enemies deal
+                <strong>+5% damage per clear</strong>, added up (7 clears = +35%), and take less damage on a curve that
+                levels off and never goes past <strong>60% damage reduction</strong>:
+                1 clear 5%, 5 clears 20%, 10 clears 34%, 20 clears 49%, 40 clears 58%. (With Fortified or Tyrannical on top,
+                enemies take at most about 69% less damage.) Each run counts once per
                 character. In a group, the dungeon uses the highest clear count among the ramping Heroes inside. It's set
                 when you enter, goes up if someone with more clears joins, and never goes down during the run (a clear
                 you earn there counts from your next dungeon). It applies to every enemy in that dungeon, bosses and affix
                 spawns included, for everyone in it, and stacks with Fortified and Tyrannical. Raids, battlegrounds and the
                 open world are never ramped. Mal'ganis (Culling of Stratholme) doesn't die, so that dungeon doesn't count.
-                Your window shows e.g. &ldquo;Ramping: 7 clears, +35% enemy stats&rdquo;. Off unless you tick it, and a
+                Your window shows e.g. &ldquo;Ramping: 7 clears, +35% enemy damage, 27% damage reduction&rdquo;. Off unless you tick it, and a
                 Fresh Build resets the count.</li>
         </ul>
         <h3>Card types</h3>
