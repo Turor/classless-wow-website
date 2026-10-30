@@ -702,6 +702,17 @@
             "typeName": "Curse"
         },
         {
+            "cat": "hazard",
+            "desc": "Mrglglgl! Inside dungeons, every 30 sec a hostile murloc of your level spawns on you and attacks you (up to 3 at a time). They give no loot or experience.",
+            "icon": "INV_Misc_Head_Murloc_01",
+            "id": 35,
+            "kind": "curse",
+            "name": "Murloc Infestation",
+            "tags": [],
+            "type": "curse",
+            "typeName": "Curse"
+        },
+        {
             "cat": "offense",
             "desc": "+20% damage dealt, but 20% more damage taken.",
             "icon": "Spell_Shadow_DeathPact",
@@ -1365,7 +1376,7 @@
     ],
     "source": {
         "branch": "feature/gauntlet-hero",
-        "commit": "2a871f7",
+        "commit": "bc18481",
         "file": "lua_scripts/Gauntlet/GauntletBoons.lua",
         "repo": "Turor/mod-turoran-roguelike"
     }
