@@ -634,17 +634,6 @@
             "typeName": "Curse"
         },
         {
-            "cat": "offense",
-            "desc": "Unless you are drunk: -20% damage dealt, healing done and maximum health. Comes with 20 Skins of Dwarven Stout.",
-            "icon": "INV_Drink_05",
-            "id": 29,
-            "kind": "curse",
-            "name": "Alcoholic",
-            "tags": [],
-            "type": "curse",
-            "typeName": "Curse"
-        },
-        {
             "cat": "hazard",
             "desc": "Each second within 5 yd of a party member or an enemy (pets and totems don't count), take 20 x your level Shadow damage (never below 10% health).",
             "icon": "Spell_Shadow_PlagueCloud",
@@ -1376,7 +1365,7 @@
     ],
     "source": {
         "branch": "feature/gauntlet-hero",
-        "commit": "bc18481",
+        "commit": "43f632f",
         "file": "lua_scripts/Gauntlet/GauntletBoons.lua",
         "repo": "Turor/mod-turoran-roguelike"
     }
