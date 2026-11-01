@@ -763,7 +763,7 @@
         },
         {
             "cat": "hazard",
-            "desc": "Chaos curse. Inside dungeons, now and then in combat a random party member is mind controlled for 8 sec and attacks the party at full damage. It ends early once they have dealt 100% of their own max health in damage to teammates. Alone you lose control of your character for 5 sec instead.",
+            "desc": "Chaos curse. Inside dungeons, now and then in combat a random party member is mind controlled and attacks the party at full damage until they have dealt 100% of their own max health in damage to teammates, they die, or the party leaves combat. Crowd control doesn't break it. Alone you lose control of your character for 5 sec instead.",
             "icon": "Spell_Shadow_ShadowWordDominate",
             "id": 36,
             "kind": "curse",
@@ -796,7 +796,7 @@
         },
         {
             "cat": "hazard",
-            "desc": "Chaos curse. Inside dungeons, now and then in combat a pack of 3+ demons (max 5) arrives; each one that falls rises again 3-5 sec later while a packmate lives: kill them close together. With Portals, shadow-realm mobs raise each other the same way.",
+            "desc": "Chaos curse. About every 5 min in a dungeon (in or out of combat) your party is marked: your next encounter is a Hydra encounter. 10 sec into your next fight (boss pulls too), up to 5 of the mobs fighting you become a Hydra pack: each one that dies rises again 3-5 sec later while one of them lives (raised copies drop nothing). Bosses and their adds never rise.",
             "icon": "Spell_Shadow_RaiseDead",
             "id": 39,
             "kind": "curse",
@@ -1469,7 +1469,7 @@
     ],
     "source": {
         "branch": "feature/gauntlet-hero",
-        "commit": "a292092",
+        "commit": "8c82749",
         "file": "lua_scripts/Gauntlet/GauntletBoons.lua",
         "repo": "Turor/mod-turoran-roguelike"
     }
