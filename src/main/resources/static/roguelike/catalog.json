@@ -346,6 +346,66 @@
             "typeName": "Boon"
         },
         {
+            "cat": "dungeon",
+            "desc": "Chaos boon. Inside dungeons a Moonwell sometimes springs up at your feet in combat: for 12 sec everyone in the party within 8 yd regains 6% health and 6% mana every second.",
+            "icon": "Spell_Nature_Starfall",
+            "id": 36,
+            "kind": "boon",
+            "name": "Moonwell",
+            "noWildCard": true,
+            "tags": [],
+            "type": "boon",
+            "typeName": "Boon"
+        },
+        {
+            "cat": "dungeon",
+            "desc": "Chaos boon. Inside dungeons you sometimes Vanish in combat (threat dropped, invisible for 6 sec), and your next ability or spell within 20 sec deals (or heals) 150%.",
+            "icon": "Ability_Vanish",
+            "id": 37,
+            "kind": "boon",
+            "name": "Vanish",
+            "noWildCard": true,
+            "tags": [],
+            "type": "boon",
+            "typeName": "Boon"
+        },
+        {
+            "cat": "dungeon",
+            "desc": "Chaos boon. Once per dungeon run, when you die (any cause) you instantly rise where you fell with 30% health and mana. No Ankh needed. Fires before Second Chance, which then stays available.",
+            "icon": "Spell_Nature_Reincarnation",
+            "id": 38,
+            "kind": "boon",
+            "name": "Reincarnation",
+            "noWildCard": true,
+            "tags": [],
+            "type": "boon",
+            "typeName": "Boon"
+        },
+        {
+            "cat": "dungeon",
+            "desc": "Chaos boon. Inside dungeons you sometimes call an artillery barrage in combat: 4 volleys 3 sec apart, each marking 4 fire rings (5 yd) on hostile enemies near you, in combat or not, for 12% of their max health (3% on bosses).",
+            "icon": "Spell_Shadow_RainOfFire",
+            "id": 39,
+            "kind": "boon",
+            "name": "Call in the Artillery",
+            "noWildCard": true,
+            "tags": [],
+            "type": "boon",
+            "typeName": "Boon"
+        },
+        {
+            "cat": "dungeon",
+            "desc": "Chaos boon. When anyone in your party drops below 35% health in a dungeon fight, a light appears beside them. Heal it to full within 15 sec and it becomes an Avatar of Light that fights for the party for up to 60 sec, fading 4% per second unless healed. At most one light per 60 sec.",
+            "icon": "Spell_Holy_GuardianSpirit",
+            "id": 40,
+            "kind": "boon",
+            "name": "The Light Shines on the Worthy",
+            "noWildCard": true,
+            "tags": [],
+            "type": "boon",
+            "typeName": "Boon"
+        },
+        {
             "cat": "wild",
             "desc": "A random boon, re-rolled every time you enter a new dungeon instance.",
             "icon": "INV_Misc_Dice_01",
@@ -697,6 +757,50 @@
             "id": 35,
             "kind": "curse",
             "name": "Murloc Infestation",
+            "tags": [],
+            "type": "curse",
+            "typeName": "Curse"
+        },
+        {
+            "cat": "hazard",
+            "desc": "Chaos curse. Inside dungeons, now and then in combat a random party member is mind controlled for 8 sec and attacks the party at full damage. It ends early once they have dealt 100% of their own max health in damage to teammates. Alone you lose control of your character for 5 sec instead.",
+            "icon": "Spell_Shadow_ShadowWordDominate",
+            "id": 36,
+            "kind": "curse",
+            "name": "Madness",
+            "tags": [],
+            "type": "curse",
+            "typeName": "Curse"
+        },
+        {
+            "cat": "hazard",
+            "desc": "Chaos curse. Inside dungeons, now and then in combat a restless spirit rises from the ground at low health. Heal it to full within 20 sec or the grave bursts and 3 zombies of your level (one more per extra party member) climb out.",
+            "icon": "INV_Misc_Bone_HumanSkull_01",
+            "id": 37,
+            "kind": "curse",
+            "name": "Hollowed Ground",
+            "tags": [],
+            "type": "curse",
+            "typeName": "Curse"
+        },
+        {
+            "cat": "hazard",
+            "desc": "Chaos curse. Inside dungeons, now and then in combat half your party (rounded down) is pulled into a shadow realm while the rest keep fighting. Each pulled player faces 1 to 3 of this dungeon's own enemies there; when they are all dead a portal opens that returns you to where you were. Needs at least 2 players.",
+            "icon": "Spell_Shadow_DemonicCircleSummon",
+            "id": 38,
+            "kind": "curse",
+            "name": "Portals",
+            "tags": [],
+            "type": "curse",
+            "typeName": "Curse"
+        },
+        {
+            "cat": "hazard",
+            "desc": "Chaos curse. Inside dungeons, now and then in combat a pack of 3+ demons (max 5) arrives; each one that falls rises again 3-5 sec later while a packmate lives: kill them close together. With Portals, shadow-realm mobs raise each other the same way.",
+            "icon": "Spell_Shadow_RaiseDead",
+            "id": 39,
+            "kind": "curse",
+            "name": "Hydra",
             "tags": [],
             "type": "curse",
             "typeName": "Curse"
@@ -1365,7 +1469,7 @@
     ],
     "source": {
         "branch": "feature/gauntlet-hero",
-        "commit": "a3b4e6a",
+        "commit": "a292092",
         "file": "lua_scripts/Gauntlet/GauntletBoons.lua",
         "repo": "Turor/mod-turoran-roguelike"
     }

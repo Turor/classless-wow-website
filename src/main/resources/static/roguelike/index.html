@@ -14,7 +14,9 @@
         <a href="#overview">Overview</a>
         <a href="#creation">Character Creation</a>
         <a href="#rules">Realm Rules</a>
+        <a href="#update">Update &amp; Next Dungeon</a>
         <a href="#draft">Boons &amp; Curses Draft</a>
+        <a href="#chaos">Chaos Events</a>
         <a href="#boons">Boons</a>
         <a href="#curses">Curses</a>
     </nav>
@@ -51,7 +53,10 @@
             <li><strong>Classes:</strong> choose how many classes to draft (1&ndash;5, default 3). Each pick is a row of
                 3 classes, and you keep one per row. You get 3 re-rolls, shared with the ability draft.</li>
             <li><strong>Level:</strong> pick any starting level that falls inside at least one dungeon's level range
-                (the lowest is 15, Ragefire Chasm). The full list is below.</li>
+                (the lowest is 15, Ragefire Chasm). The full list is below. The optional <strong>Start at</strong>
+                picker on this page lists only the dungeons that fit the level you chose (default: none). If you pick
+                one, you're teleported just outside its entrance about 1 second after you lock in (no teleporter
+                cooldown); if you're dead, in combat or on a flight path it tells you to use <code>/tp</code> instead.</li>
             <li><strong>Abilities:</strong> for each ability slot you're offered 3 whole spells from your drafted classes
                 and keep 1 (pick 3, keep 1). You get every rank up to your level. Spells that come from talents are
                 never offered (take the talent instead), and each class's core kit is free (see below). Besides
@@ -133,7 +138,8 @@
                 trials and Boss Rolls, and puts you back to level 1. You're logged out, and on your next login character
                 creation starts again at step 1. Reputation, quests, achievements, professions, player mail and your
                 group are kept. You must be alive, out of combat, not on a flight path and not in a dungeon, raid,
-                battleground or arena (or a battleground queue). One reset per 10 minutes. The server saves a backup
+                battleground or arena (or a battleground queue). One reset per 10 minutes. Creation then runs as normal,
+                including the <em>Start at</em> dungeon picker. The server saves a backup
                 first, so a GM can restore a mistaken reset.</li>
         </ul>
         <div class="note">
@@ -146,6 +152,39 @@
             <code>steam/install-steam-shortcut.sh</code>. The macOS launcher doesn't support it.
             A working install writes <code>cwm.log</code> saying &ldquo;installed 4/4 hooks&rdquo;.
         </div>
+    </section>
+
+    <section id="update">
+        <h2>Update Character &amp; the next dungeon</h2>
+        <h3>Update Character</h3>
+        <p>Once your build is locked you can level it up without starting over. Type <code>/gauntlet update</code> or
+            press <em>Update Character</em> in the teleporter window. It works any time, <strong>even in the middle of a
+            dungeon</strong>.</p>
+        <ul>
+            <li><strong>Add-only:</strong> your level only goes up, never down. Spells, talents, gear, boons, curses
+                and bags are never removed or re-granted.</li>
+            <li><strong>Talent points:</strong> +1 per level gained. Spend them in the normal Classless talent window.</li>
+            <li><strong>Abilities:</strong> your drafted abilities learn their new ranks for the new level. You also get
+                <strong>1 new ability pick for every 5 levels</strong> gained since you locked in (pick 1 of 3 from your
+                drafted classes, never a spell you already have). The cards are rolled once and kept, so there's no free
+                re-roll. Picks you don't take stay open for a later update.</li>
+            <li><strong>Optional teleport:</strong> choose a dungeon that fits the new level and you're taken to its
+                entrance (alive, out of combat and not on a flight path).</li>
+            <li><strong>Checks:</strong> the server checks the update with the same rules as creation (the level must fit
+                a dungeon, picks must be cards you were offered). A relog never undoes an update.</li>
+        </ul>
+        <h3>Final boss: what next?</h3>
+        <p>When a dungeon's final boss dies, every Hero in the group inside the instance and within 100 yd gets a
+            &ldquo;what next?&rdquo; window, shown after any Boss Roll window is closed. It comes up <strong>once per run</strong>,
+            and kills by your pet count too.</p>
+        <ul>
+            <li><strong>Update spec:</strong> opens Update Character.</li>
+            <li><strong>Same spec, new dungeon:</strong> +3 levels (or up to the chosen dungeon's minimum level, max 80),
+                no new abilities, then teleports you to the dungeon you pick.</li>
+            <li><strong>Stay here:</strong> closes the window.</li>
+        </ul>
+        <p class="muted">It doesn't fire in The Culling of Stratholme (Mal'ganis never dies) or Halls of Reflection
+            (the run ends with an escape, not a kill).</p>
     </section>
 
     <section id="draft">
@@ -219,6 +258,71 @@
             <tr><td><span class="badge pact">Pact</span></td><td>Curses</td><td>A strong boon tied to a curse.</td></tr>
             <tr><td><span class="badge trial">Trial</span></td><td>Curses</td><td>A curse until you reach a dungeon goal, then the matching boon for good. Group members in the same instance within 100 yd get credit.</td></tr>
             <tr><td><span class="badge affix">Dungeon Affix</span></td><td>Curses</td><td>A Mythic+-style affix on every enemy in any dungeon you're in.</td></tr>
+            </tbody>
+        </table>
+    </section>
+
+    <section id="chaos">
+        <h2>Chaos events</h2>
+        <p>Four curses and five boons are <strong>chaos events</strong>: things that happen to your party in the middle of
+            a dungeon fight. They're drafted like any other card and show up in the Boons and Curses lists below.</p>
+        <h3>The shared timer</h3>
+        <ul>
+            <li><strong>Party-wide:</strong> your group inside one dungeon or raid shares one timer, and it can fire any
+                chaos event that any Hero in the group drafted. Solo, you're a party of one. Never outside dungeons and raids.</li>
+            <li><strong>Combat seconds only:</strong> it only counts while someone in the party is in combat.</li>
+            <li><strong>It ramps:</strong> the chance starts at zero and rises every combat second. About half of events have
+                fired by <strong>1:30</strong> of combat, and one <strong>always</strong> fires by <strong>3:00</strong>.</li>
+            <li><strong>One at a time:</strong> the timer stops while an event runs, and every event runs to the end even
+                if combat drops.</li>
+            <li><strong>1-minute grace</strong> after each event ends, then a fresh window starts from zero.</li>
+            <li>Everything chaos events spawn gives no loot, XP or kill credit, and isn't buffed by affixes.</li>
+        </ul>
+        <h3>Curses</h3>
+        <table class="rl-table">
+            <thead><tr><th>Curse</th><th>What happens</th></tr></thead>
+            <tbody>
+            <tr><td><strong>Madness</strong></td><td>A random party member (bots too) is mind controlled for 8 seconds and
+                attacks the party at full damage. It ends early once they've dealt damage equal to 100% of their own max
+                health to teammates; crowd control doesn't break it. Alone, you lose control (fear) for 5 seconds instead.</td></tr>
+            <tr><td><strong>Hollowed Ground</strong></td><td>A restless spirit rises 6&ndash;12 yd from a party member at 15%
+                health. Heal it to full within 20 seconds and it's laid to rest. If not, the grave bursts and 3 zombies
+                (+1 per extra party member) climb out and fight for up to 90 seconds.</td></tr>
+            <tr><td><strong>Portals</strong></td><td><strong>Half the party</strong> (rounded down, at least 1) is pulled into
+                the <strong>shadow realm</strong>: the same spot in the same dungeon, phased out of sight of everyone else.
+                Each split player faces <strong>1&ndash;3 of that dungeon's regular trash mobs</strong> (never bosses) at
+                the dungeon's difficulty. When they're all dead a portal appears; use it to go back to the exact spot you
+                left. Stay within 30 yd or you're pulled back to your spot. If the main party wipes meanwhile, the split
+                players keep fighting and come back to their wiped party. If you die in the shadow realm you're returned
+                at once and the normal revive rules apply. After 5 minutes everyone is sent back. Never happens solo.
+                No reward.</td></tr>
+            <tr><td><strong>Hydra</strong></td><td>A pack of 3 demons (+1 per extra party member, <strong>max 5</strong>)
+                arrives. Each one that falls rises again <strong>3&ndash;5 seconds later</strong> while any packmate lives,
+                so kill them close together. If the party also has Portals, the shadow-realm mobs raise each other the
+                same way, but nothing is raised across realms. Only Hydra's own units rise: dungeon mobs and boss adds
+                are never raised. Gone after 2 minutes.</td></tr>
+            </tbody>
+        </table>
+        <h3>Boons</h3>
+        <table class="rl-table">
+            <thead><tr><th>Boon</th><th>What happens</th></tr></thead>
+            <tbody>
+            <tr><td><strong>Moonwell</strong></td><td>A Moonwell springs up at a Hero's feet: for 12 seconds everyone within
+                8 yd regains 6% health and 6% mana every second.</td></tr>
+            <tr><td><strong>Vanish</strong></td><td>You vanish (threat and combat dropped, stealthed) and turn invisible for
+                6 seconds. Your next ability, spell hit or heal within 20 seconds does 150% (not auto-attacks or
+                damage-over-time ticks).</td></tr>
+            <tr><td><strong>Reincarnation</strong></td><td>Once per dungeon run, when you die you rise on the spot half a
+                second later with 30% health and mana (no reagent, no sickness). It comes before <em>Second Chance</em>,
+                which stays unspent, and before you'd need to release for the <em>Dungeon revive</em>. It isn't on the timer.</td></tr>
+            <tr><td><strong>Call in the Artillery</strong></td><td>4 volleys, 3 seconds apart. Each volley marks
+                <strong>4</strong> fire rings (5 yd) on hostile mobs within 40 yd, <strong>in combat or not</strong>;
+                2 seconds later the shells land for 12% of each enemy's max health (3% on bosses). Watch out, it can pull
+                idle packs. Never hits friendly or neutral units, critters or pets.</td></tr>
+            <tr><td><strong>The Light Shines on the Worthy</strong></td><td>When a party member in combat drops below 35%
+                health, a light appears beside them. Heal it to full within 15 seconds and it becomes an
+                <strong>Avatar of Light</strong> that fights for the party for up to 60 seconds, losing 4% health per second
+                unless you keep healing it. At most one light per minute (1-minute cooldown after it ends).</td></tr>
             </tbody>
         </table>
     </section>
