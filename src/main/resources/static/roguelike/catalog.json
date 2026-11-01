@@ -796,7 +796,7 @@
         },
         {
             "cat": "hazard",
-            "desc": "Chaos curse. About every 5 min in a dungeon (in or out of combat) your party is marked: your next encounter is a Hydra encounter. 10 sec into your next fight (boss pulls too), up to 5 of the mobs fighting you become a Hydra pack: each one that dies rises again 3-5 sec later while one of them lives (raised copies drop nothing). Bosses and their adds never rise.",
+            "desc": "Chaos curse. Every fight in a dungeon becomes a Hydra fight: 10 sec after combat starts, every non-boss mob fighting you (and any that join later) is part of the Hydra pack. Every 10 sec, each living pack member raises up to 2 of the pack's dead (oldest first) where they fell, with a warning 3 sec before. Raised copies drop nothing. Bosses and their adds never rise.",
             "icon": "Spell_Shadow_RaiseDead",
             "id": 39,
             "kind": "curse",
@@ -1469,7 +1469,7 @@
     ],
     "source": {
         "branch": "feature/gauntlet-hero",
-        "commit": "8c82749",
+        "commit": "355452c",
         "file": "lua_scripts/Gauntlet/GauntletBoons.lua",
         "repo": "Turor/mod-turoran-roguelike"
     }
