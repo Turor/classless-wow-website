@@ -268,6 +268,9 @@
             a dungeon fight. They're drafted like any other card and show up in the Boons and Curses lists below.</p>
         <h3>The shared timer</h3>
         <ul>
+            <li><strong>Which events:</strong> Madness, Hollowed Ground, Portals, Moonwell, Vanish and Call in the
+                Artillery use this timer. Hydra applies to every fight, and The Light and Reincarnation trigger on
+                low health and death.</li>
             <li><strong>Party-wide:</strong> your group inside one dungeon or raid shares one timer, and it can fire any
                 chaos event that any Hero in the group drafted. Solo, you're a party of one. Never outside dungeons and raids.</li>
             <li><strong>Combat seconds only:</strong> it only counts while someone in the party is in combat.</li>
@@ -282,9 +285,11 @@
         <table class="rl-table">
             <thead><tr><th>Curse</th><th>What happens</th></tr></thead>
             <tbody>
-            <tr><td><strong>Madness</strong></td><td>A random party member (bots too) is mind controlled for 8 seconds and
-                attacks the party at full damage. It ends early once they've dealt damage equal to 100% of their own max
-                health to teammates; crowd control doesn't break it. Alone, you lose control (fear) for 5 seconds instead.</td></tr>
+            <tr><td><strong>Madness</strong></td><td>A random party member (bots too) is mind controlled and attacks the party
+                at full damage. There's no set duration: it lasts until they've dealt damage equal to 100% of their own max
+                health to teammates, they die, or the whole party is out of combat. Crowd control and dispels don't break
+                it. (A hidden 60-second failsafe only exists to stop it getting stuck.) Alone, you lose control (fear) for
+                5 seconds instead.</td></tr>
             <tr><td><strong>Hollowed Ground</strong></td><td>A restless spirit rises 6&ndash;12 yd from a party member at 15%
                 health. Heal it to full within 20 seconds and it's laid to rest. If not, the grave bursts and 3 zombies
                 (+1 per extra party member) climb out and fight for up to 90 seconds.</td></tr>
@@ -296,11 +301,16 @@
                 players keep fighting and come back to their wiped party. If you die in the shadow realm you're returned
                 at once and the normal revive rules apply. After 5 minutes everyone is sent back. Never happens solo.
                 No reward.</td></tr>
-            <tr><td><strong>Hydra</strong></td><td>A pack of 3 demons (+1 per extra party member, <strong>max 5</strong>)
-                arrives. Each one that falls rises again <strong>3&ndash;5 seconds later</strong> while any packmate lives,
-                so kill them close together. If the party also has Portals, the shadow-realm mobs raise each other the
-                same way, but nothing is raised across realms. Only Hydra's own units rise: dungeon mobs and boss adds
-                are never raised. Gone after 2 minutes.</td></tr>
+            <tr><td><strong>Hydra</strong></td><td><strong>Every fight</strong> in a dungeon is a Hydra fight (no timer, not on
+                the shared timer). <strong>10 seconds after combat starts</strong>, <strong>every non-boss mob</strong>
+                fighting you becomes part of the Hydra pack, and mobs that join the fight later are added too. Mobs that die
+                before the 10-second mark aren't part of it. <strong>Every 10 seconds</strong>, each <em>living</em> pack mob
+                raises up to <strong>2</strong> of the pack's dead (oldest deaths first) where they fell, so 1 survivor brings
+                back 2 and 3 survivors can bring back 6. You get a center-screen warning and a chat line 3 seconds before:
+                &ldquo;The Hydra stirs: N fallen will rise in 3 seconds!&rdquo;. Kill them close together. Raised copies drop
+                no loot and give no XP (the original corpse keeps its loot). <strong>Bosses and boss adds never rise</strong>:
+                on a boss pull only the regular trash in that fight is affected. Only the main party's fight counts, not the
+                shadow realm. It ends when the whole pack is dead, or the party is out of combat for 10 seconds.</td></tr>
             </tbody>
         </table>
         <h3>Boons</h3>
