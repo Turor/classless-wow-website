@@ -300,7 +300,7 @@
         },
         {
             "cat": "dungeon",
-            "desc": "Once per dungeon run, when you die you are brought back 3 sec later with 40% health.",
+            "desc": "When you die in a dungeon you are brought back 3 sec later with 40% health, using a charge. You get 1 charge on entering a new dungeon and earn 1 more per minute in combat there, up to 3.",
             "icon": "Spell_Holy_Resurrection",
             "id": 32,
             "kind": "boon",
@@ -1469,7 +1469,7 @@
     ],
     "source": {
         "branch": "feature/gauntlet-hero",
-        "commit": "9fc187a",
+        "commit": "48c4fdd",
         "file": "lua_scripts/Gauntlet/GauntletBoons.lua",
         "repo": "Turor/mod-turoran-roguelike"
     }
